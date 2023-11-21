@@ -1,0 +1,379 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WIN_Configuration
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : WIN_Configuration
+ identifier : 0x26d0090907008f1f
+ internal_properties : CAAAAAgAAAAxiuDrclJil4M8Vym1HBRQ+p9MrFw946+xYZKniQfgCV69QCbsjD3EsvYSZMqo0YRJ0/pvfsyEPl+F4/HOgmgLf7u85dDIJLnqWqspkiBfD6OCKuNvAdFb2rqWSUeBPy4AWOiSf+aasoFNIx05EwxP/+dALrQYASvDTEW1myn9hdeG5pdsGOTPHXaslQmLcYnH+wAxGQkA8o1GLMW30dW+x1sE1A866HzNeyrDt8AJnY417Jwk/ZRlFeLiFd/smzD6z41xHW/Oi0YRPBTSnxDGZCUHhR+dFXteztYXFDlX9Nn8HcFkNBG/zn9YctoJuq/RANh3VzljDjpUptSOSUBYMexgv3k90HUJ1POHWw78b4dn+jBunQg4fyzcFfcUnNSwpBb9czyHpw5nLaPXkA+LPsGv+ihNchdJRuWpyVJAAkK+GfTTKVfBg/IWfLzfOuIuydkPMSBFfh6P8idWBFNGFkSeyIFJo3A0f7WzKZ+fz0u8wAOk2N+FfbOsbAZYG6hk69j9YKmMSt0FvuR73BwE5rKFMZaYmnKaHQKWkIPZ76fFHRlK6aDOvGzMNnvgP5VFbtD+STKXB1X+1J3x3J5DUzikAy+AO5P/ei0AZElsZOj3UxkPklxigEcsDldG41MOcEZ1JAMKeXbfWitWcNw8fkOK1guJibJxvChCdgfIFPtScubmEAzaNA1gxOBFsOvtmB0f/ULph48Ji0vWqTDGe4p/zc7V
+ properties :
+  width : 298
+  height : 270
+  widthClient : 296
+  heightClient : 238
+ controls :
+  -
+    name : LIST_MODEL
+    identifier : 0x26d0090907038f1f
+    internal_properties : CAAAAAgAAAA4HgqXhslUVbmOkKJ8mB2isoqMs3b1WvUNsZzsrWhHSl600x3iX0qZ8AVwtMQu6fSrQgMIfgoOGf+wW1Px3ONZK4/f5XJEjxEfWN3WEYewjB2ZSwAUCOvdqvo15F3XV8p2HAqnsgoWz2smoZuZWGO3WctJ3Q3L1lpIm/ai9Y51K9Dv6zTDS+JkJirRnP/9Ru+2idNKfO+Yd/MXRyF/oNlHtHkLWV2eWEJZ9/wHsfd1US0asc8/QzFIj1jJwrup3X9Qgq4Dsin4Ukf93ptmycMOts03ud0IpqN6GeJjGCFFnghGjEhy6nbU5SMTthWPEq99DWeyRkL3YKmszplOL66BopjUXjgFlLA+O18PIi/RRg9bCVDW94HkBbaUULHXfUuOMU/tHLBti1xUlkLD6Su7SA4GYNVc1gqxdxnatMGfI80dxQAo6JdeEyy8G1R9NieB4pP4HXVgAKgJ8xQvcd6UL8IedLZMobAI99Wf0BIu73LaqcHYbAsvoZXN2Qyb7+SyLY6oIx/q2HSBVXVte1xYCAMNpk4+Bg/tm93up1vZu1Bna6JYSkmPln7swtZ3ptlQjsamIFWCMKSXnxnV7GKxCtHQR8O9/EKXmprIyidnqDtxbwUcOGfX15pZ7fOCgw4yqBQyDjvzSywUmUlsaX49fHUTyHxkpA8j29a4mAALuen8Qx6yfaxwJzdDiXYsPhLKFP0k23O2YU7If6TwtzW7s35B+XiUSEtMvy8gmdJPyxEkdolCEHvTl7xLXdn4OLiRZLN9Uv/jvTtGgxoqWaV/UmpZDpM9wxuq6asTgVZxn6qRPPzMYMmkFJQRBx8JKZ9mQZDSMPOETyXlhMDaIX/ocjfUYEqqIsxIRIkxOhjsAfNvdrndFc8DKR8nqn7uEh6j0sx2z4gv8yi8bx3o9apy6KN3aFR0phsYpd5ybM5r8y0TBQNF5YYFUPJRSeISfyl4Q7u7Bot9/eeCAcRGA3lNQaj7TxmerjOLdqJKQIlhIoE8fpYkB1p8BsE8G41flFcA1cPqr5OkFy79nDU7O9CxnxjasuiG+VQgFuw795ql3XYfpykJkygxYWIR4dOfT75t/OF9v9Q=
+    properties :
+     x : 6
+     y : 6
+     width : 257
+     height : 197
+    type : 7
+    code_elements :
+     type_code : 7
+     p_codes :
+      -
+        type : 35
+        enabled : false
+      -
+        type : 22
+        enabled : false
+      -
+        type : 24
+        enabled : false
+      -
+        type : 23
+        enabled : false
+      -
+        type : 25
+        enabled : false
+  -
+    name : BTN_New
+    identifier : 0x26d0090907048f1f
+    internal_properties : CAAAAAgAAADN/wJ1o9E692CCJa+cyxodq4CcoHixfkl+RzZeyHpnwJZPjqpk4hiUg8kRfLC1vdBa6HtiU/xsa0oxo4cdCh6gReJ7PnS+aVKmpS3jMScgJ0DIvFywI9NFjyBqmwDzyXM605GelpwPVogSwZL6KTzPi4ybs/Bn6JPU8ocH4VD8h7DTjfxXo3zGnW+cau+ZKc6wB8w91P4crdDa9Xe4dbKmoTZtcMDOu8FikVPw/dIYsj1pjNRPtH0q4JwgU59xYLXVYAmTbn3seE0uCMm4Zci8cV3f/0VHw7T9sFzFhe6EJ3Z2JNi/vOiZ/TvKMCkqqs48/zSwiLzfHb73oSS3DX/nx1NKL+i0r33eOIi0uz1nfQAsAQ1q7qNdHyEo0H/OSPtWUSdbI0CXhbIq80ol+ipDnWVimU9tatkQD9qFgCcCpgLVw2+neZc2XKlP0OhVDKZwIPFpmLT72k++Ws+7yMbm6re7jijQfaCdWw+kEZXs4BGTi1sYv1dVw1PLsV2405MgGHX7Bo9/+HrIDXtIRXOKc+9fqCrpNIZNzQMK616OARb0K18vZd5C670Fxv3uX0aN5uU6v10Qy8BoN2L+B2Ga2zpTTcU8XO3bb6zyoM4/B1853tsToM5sf92aCp6rFtAJoH03MMAAswexxP54Es96JLclY3UBhrQHH/n1FH141lj6CjVjjF2m8vETNVuQ3FZKmHnhfJ2fqO8HhmpWEBvvmUwmHPXJBfiMAp0hR+pV8loN47my1tqY7s/C59fItLmF49A5+QyiYE639xdVpOk9AnKzaM1qY2wB8nkMtqcRSmYFfp99FFYJhxcHHUVTrKutOAHhgDiZuULUOBd1cHeXhC4B/LyWln/oaqWkYE9S3e9pwrlgZSskVi7ihm8xJAIVhJadtRNY/ki6e05Wr3HcmK3kiCjq4vYmcK6kpbZ3iZvJUZrsSEDHtDB9aeuo8baQEbIKmJuTB3ruQSdmTefGvp6flYHtA1Y8euKllapT/EKJMfo7n4KcpSa90oZZN4xnKivplw8l5Cu7VPnW9YotIgeyJZdHm6ieWlgGviYdW5pCnwzF0H/3lOWsRTkXt2o7DGBVYWuF/+J/pxGkc7CQLWLg6Rbnus7l44yy1g==
+    properties :
+     x : 269
+     y : 21
+     width : 20
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         // Opens the window used to add a model
+         IF Open(WIN_AddModel) THEN
+         
+         	HourGlass(True)
+         	
+         	// Modify the setting for the model of labels
+         	IF ModifyModelParameters(pGlobal.gsNameCurrentModel) THEN
+         		Info(<§$0000§>+CR, NameInClearParametersRetrieved())
+         	END
+         	
+         	// Reloads the list of templates
+         	LoadModelList()
+         		
+         	HourGlass(False)
+         	
+         END
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Cancel
+    identifier : 0x26d0090907058f1f
+    internal_properties : CAAAAAgAAADXYrxbxa54V0Ntanh4OebYtJUatPzurBAmC4nfI52dnaFT/KetLsKRnJeP+7w9x+hF2CP9ufWzTkKa6jPfbxDIxe5Bp7z9ayXj93oUe30rzsS4fT1IPNLrWa6TXb/NOe+ufGWA9TQe2Kg15iYyA0vLZUPkfi6PJUdy7qL+weOynCT7e0RSTjY26NHNS8cCWNmThV0ztTYCs4eS7tkqvRJasOMsFsS025tWPWPn3vN2jjbRXNFdSyGZPzuokHjmpoxgy5xBCnMF8hyTmzZRX57PIyUeiLH/OTHL2JR/CBlsKtjPoWnYqTwT6qyhzIc5ZxGfA4BNUFXqfok1cC6XiNINogcPpmRFrHMdZjo9QQQhcoj1O2SU0jFwBFX8AIQ1NhuszPV40KOK52daH5eBWXTjwXbrUiLMhMotEbd04ecJpKme7hYT3ONTV18RIc0MN4vEoPVAboxaNasbLEoDT4TAb6QeI8wJeaIyEpPYcS0e0DBMnrqT35ds8e4oR77isvzMJc88OhJ8pLhWH5th8Dxadqp6COECjxcayO4PldJtlSePLPsHYQSTX6ICWpOXy+A50A7nBQ+anLIyBkd7LTpK+R098cunWC4HolzpwzAjUsdsg8tBgzf0JGBTQodZsjFqgds5TRY9QynB2ytin29Bnj89vuJhDx70T0tqSY/99s1RzrWNeOvci8xwNVqKb89fr3IirR4s2DiplDoO9Iwd0BO60EMQ7cOe81ld/h4DjPfEvHZx13pnj8plBB20abEiUcYB+cvT21rFWozUvB5Us3zW87FfR3zBGEJdk3pjpTCONGbrm4DlOq1jVpHZW8bsJYaLJb8766N7u61J09rO3E3b97utJ8O1gpr35xao2gHAC0LYahGWZlk4KGjWWHoXNmQF3GgJWhq6hiOoXMffO/+fx6Q0BqjzMClDbaZaApm+hOl8DDc9Q9RfxlGc1pQP1Jnz8+H5RVIc01mBQlOjoKgJZcWuvHU8pBNeb9RAIfBAf2iOkBHSokKtB+mf6OGqF2eLPzc2zOEo3RAK0NBJGgrGw250KIk6AxGO
+    properties :
+     x : 151
+     y : 209
+     width : 80
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        internal_properties : CAAAAAgAAADQZyvpRjJZltgKBVFD+SKMukTEU1n2G2jmPSjnx1ZKdSF2vB36egNKcReVrz/xwpIZdIpZoyUu0CjPxu+MpGLAedmE/39iAmJIcu72BpKoWkpseLXy2lnJGPSMFw==
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Choose
+    identifier : 0x26d0090907068f1f
+    internal_properties : CAAAAAgAAADrzEX7Is3q23K3IsB5LbYesTf+F0gZYTV8+S1Dmug+mDKQGI4+IFu0+YwR2N4geKayFaVhlA5xNBjU1XYW8Y2+BVk39JdqJICNYo8u3koXkivh0esbqYFEr966JzokWlbeZ+Ph8+SsntkoxIODwi/PSs4ChS0i6GqNYdlfPLE2VJYIJQB2kpZ8FjD8Inp7Wsctt4E9ULkB1cOgPzUuPU60zXh0x9YWzekO6HFYhLjCf7nl0X5K2/juR0aRPhyMkXSg6PdjfjmiBOZXluEqZh/gs9DDcy+Rc5Jn11/9HffQCuLbE+RnNTGvJIF5NKKNabcXxaURLKzJkjEtA+LDzuV4KnyHIH/rnbAOxLVuoZJlCXoxu2nr59FQKDG/7KH9QyHl9hikt9Pv34f7REUEVS2TP6WrjUjKUHvcC95r/ssYM6SiecM11PkpzJuVIZPp0klG+xJAAXIcj4De+qR86LDgLl2E6PyMOrcJ/OtYelF9sbSm/fIsVe+m24oVui5wOKjCpHV1NUxgYNMPDkcnU/1GQZ//di0BKw2q0PsQhcnIEopJExi/2JBH3wtsz4iXwHFtTcxtmX+Qwhgh/FGOtX9N3ggbbZ/hqeVhvQn4ObbTdI5F0LDzHjvajqHBtCsnk7Vg1M+HAct+4WXR/KVed+4bh+M9HtOiV5TFlxrO/48MAOQ1Z8+tj+tlh9h9MYqFeY8JR76yfucHxkaVEZ9fTsrI2WOG8fmGMQSReeTUXpHiQvdnrKaeaA/jKPSFiBFO6E6b2rXa6XXyVYGfiA3D6QLXJFscLkq/3ebFvzRAYA6GQuGZkMb9F9HI6KGD1GzYAaeC+Ix5mneINQ9V7vPDljVN/vMXqrrisBT91zonAf0wPnNdI0hHti+WKOAxx4th4q+2t2EiHqPypFihfnMyqUtxYplIvKa9jJ0EmHFsp4digj0Re8YeHgjFP3sYbgfE7x3I2vJbSx/8JYPql5SUQU+Nhkk19zCl9+ewbnbsb9FM28KsUxwg4ild+W4zY7iT6VPvn/ombbuuk7xsbftRQOj+bw==
+    properties :
+     x : 65
+     y : 209
+     width : 80
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         // Check the validity of the selected row
+         IF LIST_MODEL = -1 THEN RETURN
+         
+         // Depending on the opening type of the window, 
+         IF gnOpeningType = CN_CHOICE THEN
+         	
+         	// Choose a model
+         	// Return the name of the selected model
+         	Close(WIN_Configuration, LIST_MODEL[LIST_MODEL])
+         	
+         ELSE
+         	
+         	Open(WIN_AddModel, CN_MODIFY, LIST_MODEL[LIST_MODEL])
+         	
+         END
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Modify
+    identifier : 0x26d0090907078f1f
+    internal_properties : CAAAAAgAAABgJRDCgGw/3nkOZ1n1RvWnArd/uYOepAKsCfGCgtN+s5lYH6hg6g+cSv+CO5LYXl0wlZm1MWDUNMIlvQWo3e7Oe47ws8UVA3ZVlIusTUbNoXR3/69fvkumU2rctLKsxg4f/4LwA/R7xDpBPCdwNDrn1LWh53XBaRYFhw1wKXngesmatpH6Ru6ljBcebZSv3pub2PwK/eBQeeQEBjrZkgcHiGibjbB0L+M/Dhnr1PKJst6Lda828DrfYaGL2Qm+yfunEJ7oZgRLvvqGS0DrTYzPRfKaRprVdhzg7n/Zks70RaZ5peZAY8Vf/knHCiHhqPa2LUWPSu6Nx3tl/P0htxYMM4GX9jCeiTZ9ElJ+AYBVWZQUYqnP/9Q/9jip2rQBjxQr6PPJkXSOmS6TR8xNEwNc2iZQ7oHpuZ75N8WKv9v0zYT4zF+wBuSDHcKuFXKDowdE3Nu4cCT9iVXXrD6aAIEIw/tFEmAV1w9NzwYOfYMPLztDeAPz7yePOz5xXirK6Nr+BbtSdW4aeqAHhZh52KbrRk6rAOCt7acx8joy1IFKz9G7XuCTtkA1L4JShrRso3tr1oSQMEo4ot7IQNZWRt4eY/52uZcwPEXhGHGr2bVH39xvfE3MvnZjYbVDO/Gwwx0AtyGO1zq/116KqErRuPMGgmCYRmFacAQ+f6H4lcuB/lEBYx7eaCAd2uitmjCPgq0T8KA94F4KsSavp+vGzin3MwsI5JnYAFa1pausug6y/hxOo8wYim17MmL089xmVy5tO+HXluThtWlCVrjlrXAALnb2do5keTqZsQHTnXc/njQZHjLCdWZ6eEinE3d9NN5NBiaIq6+Gcd62gJy45DO1fe/+0g8UqdoPTweN30kartMUwInfh7Y0pHoXPqjobg3MvkHfkO11tsjqco2DIbLtLSRYTogoUb66elhu7EKeV1UsrzFw20acNbBdH5q9/syTf0KGkkwEilQeCJZudSCPa1f4RuHoou/EIrqqHBkQiCWF1lQ286H1x0DjQJtl+mQXfQuDtYSyn4W0iDOL8yUoZwpHYdpOsacOnrwIW58nrD2nf14elgbxjkcmTmS0Zeo=
+    properties :
+     x : 269
+     y : 51
+     width : 20
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         // Check the validity of the selected row
+         IF LIST_MODEL = -1 THEN RETURN
+         
+         // Open the addition window in modification mode
+         IF Open(WIN_AddModel, CN_MODIFY, LIST_MODEL[LIST_MODEL]) THEN
+         	
+         	// Reloads the list
+         	LoadModelList()
+         	
+         END
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Delete
+    identifier : 0x26d0090907088f1f
+    internal_properties : CAAAAAgAAAA2i6mz7SNn3Crzbnyr149rB2DCONfPWE8TTu1lbH1M+EvV3bsgd5Pk8mN2khWoq8oFSELoUxMkg0HgWzEn+7Iv2Dlw10/GxSodPI3x7Ox41KkKN1dVuIavDowS5IhTIxbB0N6b27Y1YQ6VZ/qjAxkszS8AEBqoOiKjO2hjQQ0w6ytLtbBFGVAnS7Itvv/yM7/0E/6BqVANtvVbEKljXrj+z26G6NcpvTw/aNMcM34UmewllDZRKDvIoBeqYwsQ22ERh3db165J6CFUdlsVFwL9D+t5UKMKZuVNCet+pHkmiBWGOm474rJt4IvKEhRsNjk8CEm4W+McCOtTtM0q9DMz4AAqNej7R8LAFe/DeEXKXAmE9yqJFSkX2JSwyZOKTS+X5Z6JeaZHk/1WuIZOOQzXiI0taa+XTcv8DRdXhLaIucfYllBIdfALwBMT8IWSD0/gnjIgiwgKBydOT2M7rhEm2Lvh21nE3GIqgtbjJc1CnotkAifb8PsGmarp18hjaqkbTRGIIRM7OV09lAQihxYNlRxsh4KYrWE/05aUSeFDI9gZVgFCfo91m7byvRFGiGFdSQ+FY/QsLFT9Q7fnSo1hvm/y9b7XxcVghV4szNrKZRwe2PA/DG0eQHeeDoKfmyhjKmtylJizdFARcFJyKmZ8w/ZbZncI/U5+eSdT+ttRy7AyqbXhjaLFWMFMTdT/I0bT/4WfE6WJPC24erhuwUznCKggnHwIqXCe1Hs7UJEX76Kh11bcPPAMKOOSGjDZR1knabNcfnmMQQTV8Upt/Hy9JEN9d/uaHtSJyazU7KoV4LOEhOIHhCQXwtpwjCW8rmi92/I8trsuEtQXXpxKrhvhOOmCZR2aJ4AjvXa0P0iECi3AUuivOusLIhNCtfouY65IopQqIJU8qblVIO1XZ8YP5+iuEWEZ2NYzKbDsnJKiF4w9RPN5ss+FL4q5hXM6kY1A8W0GmYRJOdVU/62y996eoB9r/oeF4bXzhgO2dsZlzRSjXNzi8lVXn78h0ZiLLo9KF9do5cGj9U3M1wrUqQh4SPVxVTYYewGChmqMRwDperFZaPEds4EKSCLh9Dp+0rNLiFiV2qr1zU/a/uPJyU+KKvTFHOmy
+    properties :
+     x : 269
+     y : 81
+     width : 20
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         // Check the validity of the selected row
+         IF LIST_MODEL = -1 THEN RETURN
+         
+         // Asks for user confirmation
+         IF YesNo(StringBuild(<§$0001§>, LIST_MODEL[LIST_MODEL])) = Yes THEN
+         	
+         	// Delete the model
+         	pGlobal.gsListModels = Replace(pGlobal.gsListModels, LIST_MODEL[LIST_MODEL] + CR,"")
+         	
+         	// Deletes the print model
+         	DeletePrintModel(LIST_MODEL[LIST_MODEL])
+         	
+         	// Reloads the list of templates
+         	LoadModelList()
+         	
+         END
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Config
+    identifier : 0x26d0090907098f1f
+    internal_properties : CAAAAAgAAABw26RaxeKUXQ78oUNr9W6UbaoUZawkkY2fZTde3rs2d6KYGS3z6rikMe8n2VaH/b+ufRG6FpuupJfV66yMRTsbJLRSkPb1QUK8melv4V+pYA7esM+1ca0cQpRuc9biuCOXV1RFlVZumARo6N6LHPkGhJkbxy6XRuj9CHxwDcqh7XgaeuEDnsgjAfEEjlVGZkuwiOT3PQ2QOJmRIKT1Dav92Hs76oz+D/6hVwqnECe5e5ODEl8Sa2/PQoeYUU6QpSLXAEThyQfPtOrCqdvk54N1bGJzfBN/CPS9gzJkrPux/pbbGdEQQpcpUWyBUiBMUYeKjxy56ZKGaQhiZKTdmIsQiUFsSGucIXRkgEM5PlaWF5ybISBRPrXD6y7RjVpWxxu2HFWAvb3f98MqlZd1DvlcsEGiqQgozB+oZ+pEMER+2ohneAFsP8kkA6xFK7azcByRr36n7/MpJvWbWiUh9fBw3qzzhKtuGJWPbr/MGy9oPkcOcGIh/OhXVnJyROB3OZ/QChvpsqgPBj0MUzenPoEuuVAwSFapUVlGyrHiXf7zW4Hmi735UhatQfsSm93t/+RjfHv01dmUBQ6g58q++afil0gFO+2Grqf2zKCKsgUFG6XgFhJC7/YRohfi6jiEnbYVGmHePKS1RuCBYcSvRwAPUMNwV5rkGgGGXtlqdQae+bTfRnxtpnMKPgWXdpBRAgwLxInUsOJvV9e95gIMt/Q7fXRGDRxekdRXGsTRkF38KGl4dTj5SfNoro2Q1XWBnbrdx18xUFVdficZ8mauiEXlbb4BlIuUMBULzOlZ76x6IZMCl2m4KcWEwhgCoP1r7id3Ktgvy9BZrFuIMxQOEBHm/l2KZrwLA/JzR2IC2806wXNeI4fClw5/YIfhPQBs0TPkT0oGl+NJryC0zbXN5MFBIZDwBSFJeKePH+D0rN1vhYvKqNuuiOz4Gwv5+1TYNeWSVW4k3nPqV4FJLJRWBgOw2CIdXooBVslcsMl8gOip7VVOqIf0DvyksaDwejkYesQ9B2g2K+dGJ9bkWNqWpmSSwnWvLjPs9dkM8pmb8d9CSk5O18YVSNaO7Kl2JnX3jcp7EF+Ds9O4GoLYOM7Yd6Q2WiOnyE1L7l77GpcCwocn8gPRYBKUNmh0GMh4CWk=
+    properties :
+     x : 269
+     y : 111
+     width : 20
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         // Exit if no selected model
+         IF LIST_MODEL = -1 THEN RETURN
+         
+         HourGlass(True)
+         
+         // Modify the setting for the model of labels
+         IF ModifyModelParameters(LIST_MODEL[LIST_MODEL]) THEN
+         	Info(<§$0000§>+CR, NameInClearParametersRetrieved())
+         END
+         
+         HourGlass(False)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Close
+    identifier : 0x26d00909070a8f1f
+    internal_properties : CAAAAAgAAAAWRsf/53lyPsBH8ReWxvSCGCqHlWpGq4O+deAlqQheisWe0JFiSZJz4BHr0Z6BR0Dz2U2MnTYPbbcdvL73j0IME9LaCQrvQ9z3K7lE/j9IlRjVSNZN68R5vzCoY6c3cTNL3ntZKZjAV+n62QzHTIjsth7Vbg7dwouWFQnUYzcCu6aRSvADfI5Hks3DGM7TUlcN4B6/23ipEluTR/3RiMmUJ1fmYCI+HjPZbRrhOdKkFHLlQn7YFZxXv4nUhsZa6IpMfShwH/iS4EWyEvs5ZmeIQo64XNve8Xu68AXI2E5BSr08ckHCUxHY0vJguoZPazhenTnl/Z6IBhHxZdxoI0VoBTExxfmN9AeqmDeXc/jLKPBYMMPc880aH5nop3P9BC+f0MLam34yOQVHYIlR/Dmcg7RrCd8A8xIqFI3KBWX92U7aTFzJdMOeaszS2VlYkaaE1nTev2GH7lcM0a/qdgTf//yvd8+GOdve0KwfPzcfB85NCz9bvV9LZ1ZH/oGapLB6+v8PXlN8cOT9QEblaQ8eEShJITRH8FQbQAPAw5Z56mW6KEFk5cVI8BLQilgSdZ8Ycl/cVV5ovJwvkSyfuaWI6heOUrUWHPjDpW/DokEQfkVgu+AoB8+ipiuoHWBB0KzXT/5YpD+G1QeTAApla6D5TA1jSnu244wYjeRjWEjSWvOI7yC2lxwfYU2J1NZNA9clQXyDXKGPRLca+8ElKw/OABfFWjsrlUtyGsYxHvJGpMT9TJyWO0jWIReOImC9vK+lQWs6GhXrObu91RJWCuHSY8kI8XL1bHxuYhHN+q4dj5CrJTAsqzG40btcDS/gifAeSIeZMVdKbTgD5G3tSZx3q0XQuudabEljo+LeByxAF3E8mEPGGwFvk3soQR/3yhFCM9j7FIvfwUmsbmqQ9Ggt0xzP0w9E4Mx+bkhYW85Xi2clQY8Cm2FaT8Oao//tHcyxHrjVU62z8f/u1Q9qeNyjyTb3i4DYWD+6Ujctg2BRqJoryfqcUkR9fTlBQOW750QpeYoary6fY2t53RqzRzyz8tsZzTefQDQe
+    properties :
+     x : 151
+     y : 209
+     width : 80
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        internal_properties : CAAAAAgAAADQZyvpRjJZltgKBVFD+SKMukTEU1n2G2jmPSjnx1ZKdSF2vB36egNKcReVrz/xwpIZdIpZoyUu0CjPxu+MpGLAedmE/39iAmJIcu72BpKoWkpseLXy2lnJGPSMFw==
+        type : 18
+      -
+        type : 161
+        enabled : false
+ menu :
+  name : _Menu
+  identifier : 0x249c19fb7d001445
+  internal_properties : CAAAAAgAAACCv199ARoPUfG3WAPSG9eefhOOjWMQrs8CrX6cGGGJPoSHWBq4PXhStOWc1YnAZMZ5+EFR1WTDn8CTOTiyLnXPpAR5X8rsRkPZrm1yZeYDDt4kRzDPLbUf4Sh/mD3kd1D8V2drCFLmjeQhgpw7GKGwHRga+ZdjSqXGIC3LD1RracZ230hOmUJTj+ABDW4IHrw4PflmVGgp8E9KnAf/gselRrzEY90l3Cr9N00QijFYYrbrl4qF4kdim1YX6jYT4ezQhbJsU84ENZsxzq+o0JVHYQ8rxck600VhGV04/ao=
+  options : []
+ popup_menus :
+  -
+    name : PopupMenu1
+    identifier : 0x26d00909070b8f1f
+    internal_properties : CAAAAAgAAADWM31nqY9vAZKpcAKkt9moIOAQiAVxSz/kSG71zUSKRgE7WGeBPXkOrNsv3Yi7lfci4jrIM4ma+fFJWINvYE642L9juCtUO2WbOTseSWObcOgMjie5C9kufN+1hIMtFuKe0fQxfVacyD0XReYKFNOQRskgtcjaCMZsDeP66Eaj00VOrMj29dUy/y66fr7isLVRbvUvn+5pSkNXarCuIdwXoBOwopZvJVuWn6L6nHQtiHg82tXAc0D15ti7+Qpb/b9DaOJ5q837nU0DktM7WQLzo9S/DP33+N+PoeUm2IRJfQ6UJxyh+4kc3gDT/Be+p0wv3R0p4uoJ74stb/kk0vMO4AfnA7PiD6zS6SAB1/wy61hU+RR+PXy8M8xPoKWOeSbXW8Z3NVevTg==
+    options :
+     -
+       name : Option1
+       identifier : 0x26d00909070c8f1f
+       internal_properties : CAAAAAgAAAAzE5Q4g7MG+sphmf6yO0LWQnH8+SI/GH9xwmP6DL3HZaX0WToC8lNKwGcicaFEWQke8P57fgo1Ts0c/0UbYAoVL9z9HVRJyXf6FLQ/BWyABad1JJNZqxEAkEzni/tzQ5gRZI3hNXFAbA77O+hi3ZGCFdiXK508w8NLZiNyXhwMOQcKWkxqS2+AKr9WtX/PBXHbpa6xYotQLQDCw5H6nAAszDUXGm3rleme8FCDPfqpz36ROlNLE0QeoV2KK/5/KSb52m2QpsvUcNG8eLZSzd0ZqMsulOgA+YFCgLy5vkBl57E2W1rNeRkE3HMHeomg3QjtNr6lJdxG0N6aR+z+oAd6SJZlZ4c6TKC9TNYHobcR73KF/IPfqbEFTHJtjuokOLOwEMx7KMdigleH7jZBQXyM3FSx3Fh87IGJvOakz/zitOMIzoQA41WS0fO8joLuohjGAg==
+       code_elements :
+        type_code : 26
+        p_codes : []
+    controls : []
+    code_elements :
+     type_code : 26
+     p_codes : []
+ languages :
+  - en-GB
+ message_bar :
+  internal_properties : CAAAAAgAAACEDGw1mpe3AHy7wYuldLpFVWdNM1KvYyAQjn7hUa4cFi+Lq1zuC+MkSq3USZIMlWGWA3IItEZsR4wNLacc8wDJf54dLlxNJ+O8ZyKjFrGAxnjAi6dcG1av62iazgav
+ actionbar : {}
+ code_elements :
+  internal_properties : CAAAAAgAAACXiHbz5sxAgg5oBw263mrRnl5QmeWZ2tcO8dL8nvaYYNJAxuxYRbm37sT8zEv+32HGTo1rg0gLMk+wPSg2esA=
+  type_code : 1
+  p_codes :
+   -
+     code : |1+
+      PROCEDURE WIN_Configuration(gnOpeningType is int = CN_CONFIG)
+      
+      // Load the list of templates
+      LoadModelList()
+      
+      // According to the opening type
+      SWITCH gnOpeningType
+      	
+      	CASE CN_CONFIG
+      		
+      		// Modifies the button for double click
+      		LIST_MODEL..DoubleClick = BTN_Config..Name
+      		
+      		// Configuration Mode
+      		// make the button for choice invisible
+      		GP_CHOICE..Visible = False
+      		GP_CONFIG..Visible = True
+      		
+      	CASE CN_CHOICE
+      		
+      		// 'Model Selection' Mode
+      		// make the addition, modification and deletion buttons invisible
+      		GP_CHOICE..Visible = True
+      		GP_CONFIG..Visible = False
+      		
+      END
+   -
+     code : |1-
+      // Value returned by default
+      MyWindow..ReturnedValue = ""
+     type : 34
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1-
+      
+     type : 2
+   -
+     code : |1-
+      
+     type : 11
+   -
+     code : |1-
+      
+     type : 12
+   -
+     code : |1-
+      
+     type : 17
+   -
+     code : |1-
+      
+     type : 13
+  procedures :
+   -
+     name : LoadModelList
+     procedure_id : 1643823798281080607
+     type_code : 14
+     code : |1-
+      // Summary: Loads the list of templates
+      PROCEDURE LoadModelList()
+      
+      // Clears the list of templates
+       ListDeleteAll(LIST_MODEL)
+       // If the list is not empty
+      IF NOT pGlobal.gsListModels ~= "" THEN
+      	// Fills the list of templates	
+      	ListAdd(LIST_MODEL, pGlobal.gsListModels[[ TO Length(pGlobal.gsListModels) -2]] )	
+      END
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : FenConfiguration
+resources :
+ string_res :
+  identifier : 0x12d39eaf005b4f4d
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      en-GB : "The new parameters have been taken into account. Details:"
+     index : 0
+   -
+     text :
+      en-GB : Do you want to delete the selected printout template (<%1>)?)
+     index : 1
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+associated_test :
+ name : TEST_Configuration.wxt
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

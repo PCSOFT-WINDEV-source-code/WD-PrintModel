@@ -1,0 +1,1587 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : COL_PrinterSettings
+ major_version : 28
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x16d0090c02039cbb
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  internal_properties : CAAAAAgAAADlHqz7IjXcUdHiUdvlsADUtHrxtq4h8R5krDF22doetvQdMh5hEp32oR8YnLkwOzor/53SEVbkSjI/3qhUVOJCC9N0BW6E//wGjmnzF/mT5azclvVz9TIet5IoArmf00g1+CulImN9QNADHuud3yR4wgqUqUasvlgRXHGIp/SRg2AmpZMAKCaNVPHxjl3DD/bCwifo6hko50DPjC4IqzUL92YlNz3GS8mnqtN+G6rcdufJj2fyQ4FHu/BfUyJQ4NKv7bKEVzUvyKl2I3Sx/v/eXr/60fR8+j5ZU3a/bcoEiped/tzH01h4dfuyAmxnLkxegtBtV7HK3IcnWs2AshQgapCLeXxkBnm4HQFPHnBwFqmUuWKtFcHzhLU+uyW6wCZh/R9d8mKZSvwB+QbICSwiT6ERX5KbyWvT/UQoAecrcbTHx15PTuishsLa5Y2oMcSBB34JEHeUpm7Zu5CJCFqYhnUW8jXdXlv0ssELeNayistNCEUpcvBpQMBHTD+1irCBlwNqRnvZoPvAw7iWxrryokyQMVbO4WlqsOC/8kU+S1KNh6i8b2pPbfwOe0tlrHukFLh08Xw8P3m7Usz7aMYoNiFiYRz91Zez6ozTKrMopgFWtr8e4ny9KsjqgXFlQMH0t3EKZmIjYPtdl5fMIr2BLJ5o0j0+DFoZHf5eF83MqCMDeIu08I8guts9gW8YWrKSJJ4miSuHpa/TLhT6E6i8GUmyYkP6KqC7etpdFRxn1D6d35zqfECcT5P1zeDzxm2kQnsXIVvW5RdO/cpY7i9ETCN70Os/8Jja+LUkDLnyRMlhNAWs6SCzlFVbWQgenvBh
+  type_code : 31
+  p_codes :
+   -
+     code : |1-
+      CONSTANT
+      	iPaperSize_Custom	= 256
+      END
+      
+      gbExistingParameter is boolean
+      gsPrinterName is string
+      
+      gnPaperSource is int
+      gbCollate is boolean
+      gnColor is int
+      gnScale is int
+      gnPaperSize is int
+      
+      gsCustomPaperFormat is string
+      gnPageHeight is int
+      gnPageWidth is int
+      
+      gnNbCopy is int
+      gnOrientation is int
+      gnQuality is int
+      gnDuplex is int
+      gnYResolution is int
+      gnTrueType is int
+      
+      gbufSpecificParameters is buffer
+     type : 720896
+  procedures :
+   -
+     name : GetCurrentParameters
+     procedure_id : 1643823811168345275
+     type_code : 15
+     code : |1+
+      //Retrieve the information about the current printer in the global variables of the set:
+      //gcsPrinterName, gcePaperFeed, gcbCollated, gceColor, gceScale, gcePaperSize, 
+      //gcsCustomPaperSize, gcePaperHeight, gcePaperWidth, gceNbCopy, gceOrientation, gceQuality, 
+      //gceDuplex, gceYResolution, gceTrueType, gcbuffSpecificSettings
+      
+      // Syntax:
+      //GetCurrentParameters ()
+      //
+      //Example:
+      // GetCurrentParameters()
+      
+      PROCEDURE PRIVATE GetCurrentParameters()
+      
+      gsPrinterName = iInfoPrinter(True,iPrinterName) // Printer Name
+      
+      // Retrieve the settings of the current printer
+      gnPaperSource = iParameter(iPaperSource) // Feed mode for the printer
+      gbCollate = iParameter(iCollate) // Collate mode of pages
+      gnColor = iParameter(iColor) // Management mode of colors
+      gnScale = iParameter(iScale) // Percentage of the scale
+      gnPaperSize = iParameter(iPaperSize) // Format of paper used
+      
+      gsCustomPaperFormat = iParameter(iFormatCustomPaper) // Size of custom paper used
+      gnPageHeight = iParameter(iPaperLength) // Height of paper used
+      gnPageWidth = iParameter(iPaperWidth) // Width of paper used
+      
+      gnNbCopy = iParameter(iCopies) // Number of copies by default
+      gnOrientation = iParameter(iOrientation) // Orientation of paper
+      gnQuality = iParameter(iQuality) // Quality of print
+      gnDuplex = iParameter(iDuplex) // Parameters for printing in Duplex mode
+      gnYResolution = iParameter(iYResolution) // Vertical resolution
+      gnTrueType = iParameter(iTrueType) // Parameters for printing TrueType fonts
+      
+      gbufSpecificParameters = iParameter(iExtraParameters) // Parameters specific to the printer
+     type : 458752
+   -
+     name : ApplyParameters
+     procedure_id : 1643823811168410811
+     type_code : 15
+     code : |1-
+      // Summary: Applies the parameters specified in the variables of the set of procedures
+      // Syntax:
+      //[ <Result> = ] ApplyParameters ([<bApplySpecificParameters> is boolean [, <bDisplayMesageIfError> is boolean]])
+      //
+      // Parameters:
+      //	bApplySpecificParameters (boolean - default value=1): Boolean set to True (by default) in order for the "specific" parameters of the printer to be taken into account by the parameters that will be applied to the printer driver
+      //	bDisplayMessageIfError (boolean - default value=1): Boolean set to True (by default) to display an error message if parameters cannot be applied
+      // Return value:
+      // 	ANSI string: Empty string if no error, otherwise a string containing the list of parameters that have not been applied
+      //Example:
+      // ApplyParameters()
+      
+      PROCEDURE PRIVATE ApplyParameters(LOCAL bApplySpecificParameters is boolean = True, LOCAL bDisplayMessageIfError is boolean = True)
+      
+      sListOfErrors is string
+      
+      
+      // Attempt to modify the current printer
+      IF NOT iConfigure(gsPrinterName) _OR_ NOT gsPrinterName ~= iInfoPrinter(True, iPrinterName) THEN
+      	sListOfErrors += StringBuild(<§$0000§>, ErrorInfo(), gsPrinterName, iInfoPrinter(True, iPrinterName))
+      	GOTO EndApplyParameter
+      END
+      
+      // Retrieve the settings of the current printer
+      // Paper Source
+      IF NOT iParameter(iPaperSource, gnPaperSource) _OR_ gnPaperSource <> iParameter(iPaperSource) THEN
+      	sListOfErrors += StringBuild(<§$0001§>, PlainNamePaperSource(gnPaperSource), PlainNamePaperSource(iParameter(iPaperSource)))
+      END
+      
+      // Manage the color
+      IF NOT iParameter(iColor, gnColor) _OR_ gnColor <> iParameter(iColor) THEN
+      	sListOfErrors += StringBuild(<§$0002§>, PlainNameColor(gnColor), PlainNameColor(iParameter(iColor)))
+      		
+      END
+      
+      // Scale
+      IF NOT iParameter(iScale, gnScale) _OR_ gnScale <> iParameter(iScale) THEN
+      	sListOfErrors += StringBuild(<§$0003§>, PlainNameScale(gnScale), PlainNameScale(iParameter(iScale)))
+      
+      END
+      // Paper Size
+      IF NOT iParameter(iPaperSize, gnPaperSize) _OR_ gnPaperSize <> iParameter(iPaperSize) THEN
+      	sListOfErrors += StringBuild(<§$0004§>, PlainNamePaperSize(gnPaperSize), PlainNamePaperSize(iParameter(iPaperSize)))
+      	
+      END
+      IF gnPaperSize = iPaperSize_Custom THEN
+      	IF NOT iParameter(iFormatCustomPaper, gsCustomPaperFormat) _OR_ gsCustomPaperFormat <> iParameter(iFormatCustomPaper)  THEN
+      		sListOfErrors += StringBuild(<§$0005§>, gsCustomPaperFormat, iParameter(iFormatCustomPaper))
+      	END
+      	
+      	IF NOT gnPageHeight = iParameter(iPaperLength) _OR_  gnPageHeight <> iParameter(iPaperLength) THEN
+      		sListOfErrors += StringBuild(<§$0006§>, gnPageHeight, iParameter(iPaperLength))	
+      	END
+      	
+      	IF NOT iParameter(iPaperWidth, gnPageWidth) _OR_ gnPageWidth <> iParameter(iPaperWidth) THEN
+      		sListOfErrors += StringBuild(<§$0007§>, gnPageWidth, iParameter(iPaperWidth))	
+      	END
+      ELSE
+      	gnPageHeight = 0
+      	gnPageWidth = 0
+      	gsCustomPaperFormat = iParameter(iFormatCustomPaper)
+      END
+      	
+      // Number of copies
+      IF NOT iParameter(iCopies, gnNbCopy) _OR_ gnNbCopy <> iParameter(iCopies) THEN
+      	sListOfErrors += StringBuild(<§$0008§>, PlainNameNbCopy(gnNbCopy), PlainNameNbCopy(iParameter(iCopies)))
+      END
+      
+      // Collated Copies
+      IF NOT iParameter(iCollate, gbCollate) _OR_  gbCollate <> iParameter(iCollate) THEN	
+      	// Notify the error if more than one copy!!
+      	IF gnNbCopy > 1 THEN
+      		sListOfErrors += StringBuild(<§$0009§>, PlainNamePageCollate(gbCollate), PlainNamePageCollate(iParameter(iCollate)))
+      	END		
+      END
+      
+      // Orientation
+      IF NOT iParameter(iOrientation, gnOrientation)  _OR_ gnOrientation <> iParameter(iOrientation) THEN
+      	sListOfErrors += StringBuild(<§$000a§>, PlainNameOrientation(gnOrientation), PlainNameOrientation(iParameter(iOrientation)))
+      END
+      
+      // Quality
+      IF NOT iParameter(iQuality, gnQuality) _OR_ gnQuality <> iParameter(iQuality) THEN
+      	sListOfErrors += StringBuild(<§$000b§>, PlainNameQuality(gnQuality), PlainNameQuality(iParameter(iQuality)))	
+      END
+      
+      // Duplex
+      IF NOT iParameter(iDuplex, gnDuplex) _OR_ gnDuplex <> iParameter(iDuplex) THEN
+      	sListOfErrors += StringBuild(<§$000c§>, PlainNameDuplex(gnDuplex), PlainNameDuplex(iParameter(iDuplex)))
+      END
+      
+      // Vertical resolution
+      IF NOT iParameter(iYResolution, gnYResolution) _OR_ gnYResolution <> iParameter(iYResolution) THEN
+      	sListOfErrors += StringBuild(<§$000d§>, PlainNameYResolution(gnYResolution), PlainNameYResolution(iParameter(iYResolution)))
+      END
+      
+      // TrueType Font
+      IF NOT iParameter(iTrueType, gnTrueType) _OR_ gnTrueType <> iParameter(iTrueType) THEN
+      	sListOfErrors += StringBuild(<§$000e§>, PlainNameTrueType(gnTrueType), PlainNameTrueType(iParameter(iTrueType)))
+      END
+      
+      IF bApplySpecificParameters THEN
+      	IF NOT iParameter(iExtraParameters, gbufSpecificParameters) _OR_ gbufSpecificParameters <> iParameter(iExtraParameters) THEN
+      		sListOfErrors += <§$000f§>
+      	END
+      END
+      
+      EndApplyParameter:
+      IF sListOfErrors <> "" _AND_ bDisplayMessageIfError THEN
+      	Error(sListOfErrors)
+      END
+      
+      RESULT sListOfErrors
+     type : 458752
+   -
+     name : PlainNamePaperSource
+     procedure_id : 1643823811168476347
+     type_code : 15
+     code : |1-
+      //PlainNamePaperSource Procedure
+      //
+      //The PlainNamePaperSource procedure is used to retrieve (in plain words) the description of the paper source
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNamePaperSource (<nFillType> is int)
+      //
+      //Parameters:
+      //	nFillType (integer): Integer
+      //Example:
+      //
+      //// Retrieve the paper source
+      //sPaperSource = PlainNamePaperSource(iParameter(iPaperSource))
+      
+      
+      //One of the constants such as iPaperSource_...
+      //Result of iParameter(iPaperSource)
+      //<Result>: String
+      //Caption (in letters) of the paper source used
+      PROCEDURE PlainNamePaperSource(LOCAL nFillType is int)
+      
+      sPlainNamePaperSource is string
+      
+      // According to the type of paper source
+      SWITCH nFillType
+      	CASE iPaperSource_Auto : sPlainNamePaperSource = <§$0010§>
+       	CASE iPaperSource_Lower : sPlainNamePaperSource = <§$0011§>
+       	CASE iPaperSource_Cassette : sPlainNamePaperSource = <§$0012§>
+       	CASE iPaperSource_Envelope : sPlainNamePaperSource = <§$0013§>
+       	CASE iPaperSource_EnvelopeManual : sPlainNamePaperSource = <§$0014§>
+       	CASE iPaperSource_LargeCapacity : sPlainNamePaperSource = <§$0015§>
+       	CASE iPaperSource_LargeFormat : sPlainNamePaperSource = <§$0016§>
+       	CASE iPaperSource_Upper : sPlainNamePaperSource = <§$0017§>
+       	CASE iPaperSource_Manual : sPlainNamePaperSource = <§$0018§>
+       	CASE iPaperSource_Middle : sPlainNamePaperSource = <§$0019§>
+       	CASE iPaperSource_SmallFormat : sPlainNamePaperSource = <§$001a§>
+       	CASE iPaperSource_Tractor : sPlainNamePaperSource = <§$001b§>
+       	OTHER CASE : sPlainNamePaperSource = StringBuild(<§$001d§>, nFillType)
+       END
+      
+      // Returns the name of the paper source (in letters)  
+      RESULT sPlainNamePaperSource
+     type : 458752
+   -
+     name : PlainNamePageCollate
+     internal_properties : CAAAAAgAAACunwF5v/IIASYqdwCXAcOmuAE2xXqXYWSl+0pUkNEgx64r+Tl/A7FUEc5TQbDYDuEcu9VwujQJ+HfvlHY3nimsKQ8DLGD+9xqXKBbZI/4HjJuQ6841UO9kpsitxtuW1xYDWELpqgeyyV6iihF1
+     procedure_id : 1643823811168541883
+     type_code : 15
+     code : |1-
+      //PlainNamePageCollate Procedure
+      //
+      //The PlainNamePageCollate procedure is used to retrieve (in plain words) the description of the page collate
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNamePageCollate (<bCollateMode> is boolean)
+      //
+      //Parameters:
+      //	bCollateMode (boolean): boolean
+      //Example:
+      //
+      //// Retrieve the page collate
+      //sPageCollate = PlainNamePageCollate(iParameter(iCollate))
+      
+      //Result of iParameter(iCollate)
+      //<Result>: String
+      //Caption (in letters) of the page collate used during the print
+      PROCEDURE PlainNamePageCollate(LOCAL bCollateMode is boolean)
+      
+      sPlainNamePageCollate is string
+      
+      
+      IF bCollateMode THEN
+      	sPlainNamePageCollate = <§$001e§>
+      ELSE
+      	sPlainNamePageCollate = <§$001f§>
+      END
+      
+      // Returns the type of page collate (in letters)
+       RESULT sPlainNamePageCollate
+     type : 458752
+   -
+     name : PlainNameColor
+     internal_properties : CAAAAAgAAAAMxe0Us2ykCdfmbVKZWKo1y/ZRfVFu24YEX3GSEx7E40RohouE8WpwD6A1Yh/Y0tI5XpB4+cq0WTgbz40eIpQlaC70F8MBzSNfSbj6B1jhghiaCOGH9UlEBk8mCjWD1Eer1XUdtbgySKjnWdu3NmFur/gZ2oFfNMvsxn3h0EDTnV04FZqveYafLBN7AlWhm9lI
+     procedure_id : 1643823811168607419
+     type_code : 15
+     code : |1-
+      //PlainNameColor Procedure
+      //
+      //The PlainNameColor procedure is used to retrieve (in plain words) the color mode (Black and White, Color, Grayscale) used for the print
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNameColor (<nColor> is int)
+      //
+      //Parameters:
+      //	nColor (integer): integer
+      //Example:
+      //
+      //// Retrieve the color
+      //sColor = PlainNameColor(iParameter(iColor))
+      
+      
+      //Result of iParameter(iColor)
+      //<Result>: String
+      //Caption (in letters) of the color mode used (black and white, color, grayscale)
+      PROCEDURE PlainNameColor(LOCAL nColor is int)
+      
+      sPlainNameColor is string
+      
+      
+      SWITCH nColor
+      	CASE iColor_Color : sPlainNameColor = <§$0020§>
+      	CASE iColor_Mono : sPlainNameColor = <§$0021§>
+       	OTHER CASE : sPlainNameColor = StringBuild(<§$0022§>, nColor)	
+      END
+      
+      // Returns the management mode of colors (in letters)
+      RESULT sPlainNameColor
+     type : 458752
+   -
+     name : PlainNameScale
+     procedure_id : 1643823811168672955
+     type_code : 15
+     code : |1-
+      //PlainNameScale Procedure
+      //
+      //The PlainNameScale procedure is used to retrieve (in plain words) the description of the scale.
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNameScale (<nScale> is int)
+      //
+      //Parameters:
+      //	nScale (integer): integer
+      //Example:
+      //
+      //// Retrieve the paper source
+      //sScale = PlainNameScale(iParameter(iScale))
+      
+      //Result of iParameter(iScale)
+      //<Result>: String
+      //Caption (in letters) of the scale used
+      
+      PROCEDURE PlainNameScale(nScale is int)
+      
+      sPlainNameScale is string
+      
+      sPlainNameScale = StringBuild("%1 %", nScale)
+      
+      
+      // Returns the scale (in letters)
+      RESULT sPlainNameScale
+     type : 458752
+   -
+     name : PlainNamePaperSize
+     internal_properties : CAAAAAgAAAD+VytkVXylMzxXKBINc4EdDUfIMdDAsRI8s/XIicgMIaU514ff+GDy2dG2V77QYUtSgNzQBa/8ZYQFlLSEDr9uuXMrOB8/negrMyelPern1Fsiw3MsoxSE5qshIJdChOfkohoW7wy8uF2RLNz8JViSil9EIdOMa9dhV6bryWTanJ+PFAm2bFwVUEG0L7pTu6QyvicTmjTiVzNq0UMBL6K1i1QdR+jGu/4E6Z7aCW3vVXmQCEn+Ol3PAQuQnYNziQ==
+     procedure_id : 1643823811168738491
+     type_code : 15
+     code : |1-
+      //PlainNamePaperSize Procedure
+      //
+      //The PlainNamePaperSize procedure is used to retrieve (in plain words) the description of the paper size
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNamePaperSize (<nPaperFormat> is int)
+      //
+      //Parameters:
+      //	nPaperFormat (integer): integer
+      //Example:
+      //
+      //// Retrieve the paper size
+      //sPaperSize = PlainNamePaperSize(iParameter(iPaperSize))
+      
+      
+      //Result of iParameter(iPaperSize)
+      //<Result>: String
+      //Caption (in letters) of the paper size
+      
+      PROCEDURE PlainNamePaperSize(nPaperSize is int)
+      
+      sPlainNamePaperSize	is string
+      
+      
+      SWITCH nPaperSize
+      	CASE iPaperSize_10x14 : sPlainNamePaperSize = <§$0024§>
+       	CASE iPaperSize_11x17 : sPlainNamePaperSize = <§$0025§>
+       	CASE iPaperSize_A3 : sPlainNamePaperSize = <§$0026§>
+       	CASE iPaperSize_A4 : sPlainNamePaperSize = <§$0027§>
+       	CASE iPaperSize_A4Small : sPlainNamePaperSize = <§$0028§>
+       	CASE iPaperSize_A5 : sPlainNamePaperSize = <§$0029§>
+       	CASE iPaperSize_GermanSTD : sPlainNamePaperSize = <§$002a§>
+       	CASE iPaperSize_GermanLGL : sPlainNamePaperSize = <§$002b§>
+       	CASE iPaperSize_B4 : sPlainNamePaperSize = <§$002c§>
+       	CASE iPaperSize_B5 : sPlainNamePaperSize = <§$002d§>
+       	CASE iPaperSize_FanfoldUS : sPlainNamePaperSize = <§$002e§>
+       	CASE iPaperSize_Envelope9 : sPlainNamePaperSize = <§$002f§>
+       	CASE iPaperSize_Envelope10 : sPlainNamePaperSize = <§$0030§>
+       	CASE iPaperSize_Envelope11 : sPlainNamePaperSize = <§$0031§>
+       	CASE iPaperSize_Envelope12 : sPlainNamePaperSize = <§$0032§>
+       	CASE iPaperSize_Envelope14 : sPlainNamePaperSize = <§$0033§>
+       	CASE iPaperSize_EnvelopeB4 : sPlainNamePaperSize = <§$0034§>
+       	CASE iPaperSize_EnvelopeB5 : sPlainNamePaperSize = <§$0035§>
+       	CASE iPaperSize_EnvelopeB6 : sPlainNamePaperSize = <§$0036§>
+       	CASE iPaperSize_EnvelopeC3 : sPlainNamePaperSize = <§$0037§>
+       	CASE iPaperSize_EnvelopeC4 : sPlainNamePaperSize = <§$0038§>
+       	CASE iPaperSize_EnvelopeC5 : sPlainNamePaperSize = <§$0039§>
+       	CASE iPaperSize_EnvelopeC6 : sPlainNamePaperSize = <§$003a§>
+       	CASE iPaperSize_EnvelopeC65 : sPlainNamePaperSize = <§$003b§>
+       	CASE iPaperSize_EnvelopeDL : sPlainNamePaperSize = <§$003c§>
+       	CASE iPaperSize_EnvelopeItaly : sPlainNamePaperSize = <§$003d§>
+       	CASE iPaperSize_EnvelopeMonarch : sPlainNamePaperSize = <§$003e§>
+       	CASE iPaperSize_EnvelopePerso : sPlainNamePaperSize = <§$003f§>
+       	CASE iPaperSize_Executive : sPlainNamePaperSize = <§$0040§>
+       	CASE iPaperSize_Folio : sPlainNamePaperSize = <§$0041§>
+       	CASE iPaperSize_Ledger : sPlainNamePaperSize = <§$0042§>
+       	CASE iPaperSize_Legal : sPlainNamePaperSize = <§$0043§>
+       	CASE iPaperSize_LetterSmall : sPlainNamePaperSize = <§$0044§>
+       	CASE iPaperSize_Letter : sPlainNamePaperSize = <§$0045§>
+       	CASE iPaperSize_Note : sPlainNamePaperSize = <§$0046§>
+       	CASE iPaperSize_Quarto : sPlainNamePaperSize = <§$0047§>
+       	CASE iPaperSize_Statement : sPlainNamePaperSize = <§$0048§>
+       	CASE iPaperSize_Tabloid : sPlainNamePaperSize = <§$0049§>
+       	CASE iPaperSize_CSheet : sPlainNamePaperSize = <§$004a§>
+       	CASE iPaperSize_DSheet : sPlainNamePaperSize = <§$004b§>
+       	CASE iPaperSize_ESheet : sPlainNamePaperSize = <§$004c§>
+       	CASE iPaperSize_Custom : sPlainNamePaperSize = <§$004d§>
+       	OTHER CASE : sPlainNamePaperSize=StringBuild(<§$004e§>, nPaperSize)	
+      END
+      
+      // Returns the paper size (in letters)
+      RESULT sPlainNamePaperSize
+     type : 458752
+   -
+     name : PlainNameNbCopy
+     procedure_id : 1643823811168804027
+     type_code : 15
+     code : |1-
+      //PlainNameNbCopy Procedure
+      //
+      //The PlainNameNbCopy procedure is used to retrieve (in plain words) the number of copies that will be printed
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNameNbCopy (<nNbCopies> is int)
+      //
+      //Parameters:
+      //	nNbCopies (integer): integer
+      //Example:
+      //
+      //// Retrieve the paper size
+      //sNumberCopy = PlainNameNbCopy(iParameter(iCopies))
+      
+      //Result of iParameter(iCopies)
+      //<Result>: String
+      //Caption (in letters) of the number of copies.
+      PROCEDURE PlainNameNbCopy(LOCAL nNbCopy is int)
+      
+      sPlainNameNbCopy is string
+      
+      sPlainNameNbCopy = StringBuild(<§$004f§>, nNbCopy)
+      
+       // Returns the number of copies (in letters)
+      RESULT sPlainNameNbCopy
+     type : 458752
+   -
+     name : PlainNameOrientation
+     procedure_id : 1643823811168869563
+     type_code : 15
+     code : |1-
+      //PlainNameOrientation Procedure
+      //
+      //The PlainNameOrientation procedure is used to retrieve (in plain words) the paper orientation
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNameOrientation (<nOrientation> is int)
+      //
+      //Parameters:
+      //	nOrientation (integer): integer
+      //Example:
+      //
+      //// Retrieve the paper size
+      //sOrientation = PlainNameOrientation(iParameter(iOrientation))
+      
+      //Result of iParameter(iOrientation)
+      //<Result>: String
+      //Caption (in letters) of the orientation.
+      PROCEDURE PlainNameOrientation(LOCAL nOrientation is int)
+      
+      sPlainNameOrientation is string
+      
+      SWITCH nOrientation
+      	CASE iOrientation_Landscape : sPlainNameOrientation = <§$0050§>
+      	CASE iOrientation_Portrait : sPlainNameOrientation = <§$0051§>
+       	OTHER CASE : sPlainNameOrientation = StringBuild(<§$0052§>, nOrientation)	
+      END
+      
+      // Returns the orientation (in letters)
+      RESULT sPlainNameOrientation
+     type : 458752
+   -
+     name : PlainNameQuality
+     procedure_id : 1643823811168935099
+     type_code : 15
+     code : |1-
+      //PlainNameQuality Procedure
+      //
+      //The PlainNameQuality procedure is used to retrieve (in plain words) the quality of the print
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNameQuality (<nQuality> is int)
+      //
+      //Parameters:
+      //	nQuality (integer): integer
+      //Example:
+      //
+      //// Retrieve the paper size
+      //sQuality = PlainNameQuality(iParameter(iQuality))
+      
+      
+      //Result of iParameter(iQuality)
+      //<Result>: String
+      //Caption (in letters) of the quality of the print.
+      PROCEDURE PlainNameQuality(LOCAL nQuality is int)
+      
+      sPlainNameQuality is string
+      
+      SWITCH nQuality
+      	CASE	iQuality_Draft : sPlainNameQuality = <§$0053§>
+      	CASE iQuality_Low : sPlainNameQuality = <§$0054§>	
+      	CASE iQuality_Medium : sPlainNameQuality = <§$0055§>
+      	CASE iQuality_High : sPlainNameQuality = <§$0056§>	
+       	OTHER CASE : sPlainNameQuality = StringBuild(<§$0057§>, nQuality)	
+      END
+      
+      // Returns the quality (in letters)
+      RESULT sPlainNameQuality
+     type : 458752
+   -
+     name : PlainNameDuplex
+     procedure_id : 1643823811169000635
+     type_code : 15
+     code : |1-
+      //PlainNameDuplex Procedure
+      //
+      //The PlainNameDuplex procedure is used to retrieve (in plain words) the type of duplex used for the print.
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNameDuplex (<nDuplex> is int)
+      //
+      //Parameters:
+      //	nDuplex (integer): integer
+      //Example:
+      //
+      //// Retrieve the type of duplex used
+      //sDuplex = PlainNameDuplex(iParameter(iDuplex))
+      
+      
+      //Result of iParameter(iDuplex)
+      //<Result>: String
+      //Caption (in letters) of the type of duplex used.
+      PROCEDURE PlainNameDuplex(LOCAL nDuplex is int)
+      
+      sPlainNameDuplex is string
+      
+      SWITCH nDuplex
+      	CASE	iDuplex_Horizontal : sPlainNameDuplex = <§$0058§>
+      	CASE iDuplex_Simple : sPlainNameDuplex = <§$0059§>
+      	CASE iDuplex_Vertical : sPlainNameDuplex = <§$005a§>
+       	OTHER CASE : sPlainNameDuplex = StringBuild(<§$005b§>, nDuplex)	
+      END
+      
+      // Returns the type of duplex (in letters)
+      RESULT sPlainNameDuplex
+     type : 458752
+   -
+     name : PlainNameYResolution
+     procedure_id : 1643823811169066171
+     type_code : 15
+     code : |1-
+      //PlainNameYResolution Procedure
+      //
+      //The PlainNameYResolution procedure is used to retrieve (in plain words) the vertical resolution (in DPI)
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNameYResolution (<nResolutionY> is int)
+      //
+      //Parameters:
+      //	nResolutionY (integer): integer
+      //Example:
+      //
+      //// Retrieve the vertical resolution
+      //sYResolution = PlainNameYResolution(iParameter(iYResolution))
+      
+      //Result of iParameter(iYResolution)
+      //<Result>: String
+      //Caption (in letters) of the vertical resolution.
+      PROCEDURE PlainNameYResolution(LOCAL nResolutionY is int)
+      
+      sPlainNameYResolution is string
+      
+      sPlainNameYResolution = StringBuild(<§$005c§>, nResolutionY)
+      
+      // Returns the resolution (in letters) 
+      RESULT sPlainNameYResolution
+     type : 458752
+   -
+     name : PlainNameTrueType
+     procedure_id : 1643823811169131707
+     type_code : 15
+     code : |1-
+      //PlainNameTrueType Procedure
+      //
+      //The PlainNameTrueType procedure is used to retrieve (in plain words) the management mode of TrueType fonts.
+      //
+      //Syntax:
+      //[ <Result> = ] PlainNameTrueType (<nTrueType> is int)
+      //
+      //Parameters:
+      //	nTrueType (integer): integer
+      //Example:
+      //
+      //// Retrieve the management mode of TrueType fonts
+      //sTrueTypeManagement = PlainNameTrueType(iParameter(iTrueType))
+      
+      
+      //Result of iParameter(iTrueType)
+      //<Result>: String
+      //Caption (in letters) of the management mode of TrueType fonts.
+      PROCEDURE PlainNameTrueType(LOCAL nTrueType is int)
+      
+      sPlainNameTrueType	is string
+      
+      SWITCH nTrueType
+      	CASE	iTrueType_Bitmap : sPlainNameTrueType = <§$005d§>
+      	CASE iTrueType_Download : sPlainNameTrueType = <§$005e§>
+      	CASE iTrueType_Subdev : sPlainNameTrueType = <§$005f§>
+      
+       	OTHER CASE : sPlainNameTrueType=StringBuild(<§$0060§>, nTrueType)	
+      END
+      
+      // Returns the management mode of TrueType fonts (in letters)
+      RESULT sPlainNameTrueType
+     type : 458752
+   -
+     name : NameInClearParametersRetrieved
+     procedure_id : 1643823811169197243
+     type_code : 15
+     code : |1-
+      //Returns a character string containing the printout parameters "in clear" 
+      //for the print characteristics found in the variables of the set of procedures
+      //Variables loaded and/or modified by LoadPrinterSettings, GetCurrentSettings, ModifyModelParameter or InitializePrintAccordingToModel
+      // Syntax:
+      //[ <Result> = ] NameInClearParametersRetrieved ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	string: Print settings "in plain words" 
+      //Example:
+      //	//Modify the setting of a type of document
+      //	if ModifyModelParameter(sNamePrintModel) THEN
+      //		info("The new settings have been taken into account. Details:"+cr,PrinterSettings.PlainNameRetrievedParameters())
+      //	END
+      
+      PROCEDURE NameInClearParametersRetrieved()
+      
+      sInfoParameters is string
+      
+      IF gsPrinterName ~= "" THEN
+      	RESULT <§$0061§>
+      END
+      
+      // Printer Name
+      sInfoParameters += StringBuild(<§$0062§>, gsPrinterName)
+      
+      // Paper Source
+      sInfoParameters += StringBuild(<§$0063§>, PlainNamePaperSource(gnPaperSource))
+      
+      // Page Collate
+      sInfoParameters += StringBuild(<§$0064§>, PlainNamePageCollate(gbCollate))
+      
+      // Color Management
+      sInfoParameters += StringBuild(<§$0065§>, PlainNameColor(gnColor))
+      
+      // Scale
+      sInfoParameters += StringBuild(<§$0066§>, PlainNameScale(gnScale))
+      
+      // Paper size
+      sInfoParameters += StringBuild(<§$0067§>, PlainNamePaperSize(gnPaperSize))
+      
+      //details of format if custom paper size
+      IF gnPaperSize = iPaperSize_Custom THEN
+      	
+      	sInfoParameters += StringBuild(<§$0068§>,
+      	gsCustomPaperFormat,
+      	NumToString(gnPageWidth/10, <§$0069§>),
+      	NumToString(gnPageHeight/10, "5,1f"),
+      	NumToString(gnPageWidth/100*50/127, <§$006a§>),
+      	NumToString(gnPageHeight/100*50/127, "5.2f"))
+      	
+      ELSE
+      	sInfoParameters += StringBuild(<§$006b§>, gsCustomPaperFormat)
+      	
+      END
+      
+      // Number of copies
+      sInfoParameters += StringBuild(<§$006c§>, PlainNameNbCopy(gnNbCopy))
+      
+      // Paper orientation
+      sInfoParameters += StringBuild(<§$006d§>, PlainNameOrientation(gnOrientation))
+      
+      // Printout quality
+      sInfoParameters += StringBuild(<§$006e§>, PlainNameQuality(gnQuality))
+      
+      // Vertical resolution
+      sInfoParameters += StringBuild(<§$006f§>, PlainNameYResolution(gnYResolution))
+      
+      // Duplex Mode
+      sInfoParameters += StringBuild(<§$0070§>, PlainNameDuplex(gnDuplex))
+      
+      // Management of TrueType fonts
+      sInfoParameters += StringBuild(<§$0071§>, PlainNameTrueType(gnTrueType))
+      
+      // Returns all the parameters in plain words
+      RESULT sInfoParameters
+     type : 458752
+   -
+     name : SavePrinterSettings
+     internal_properties : CAAAAAgAAAA++nM8PpfNqbt/to12fscnDO3nlstkwBCOMMAzThgWx3ZlZssnUydsFpreVfPizkuvyr4/YXAhb2wf5AAD8Sh2FBKcAJ9LUfO1ChaPcdaefGPakp/Sr/kHB4BXAS6EA/2uMSTJkBatLKmBbAtC6qA3veTDDW8u6QrvL1GTHoxHdWVjKnAsk8t+eqNfbZk=
+     procedure_id : 1643823811169262779
+     type_code : 15
+     code : |1-
+      //Stores the current parameters in the variables of the set of procedures for the model passed in parameter
+      // Syntax:
+      //[ <Result> = ] SavePrinterParameters (<sSettingName> is string)
+      //
+      // Parameters:
+      //	sSettingName (ANSI string): Name of the model for which the parameters must be stored
+      // Return value:
+      // 	boolean: True if the backup was performed, False otherwise
+      // Automatic process of errors: RETURN FALSE
+      //
+      
+      PROCEDURE SavePrinterSettings(LOCAL sSettingName is string)
+      
+      // Indicate that a setting is found
+      gbExistingParameter = True
+      
+      SaveParameter(sSettingName+<§$0072§>, gbExistingParameter)
+      SaveParameter(sSettingName+<§$0073§>, gsPrinterName)
+      SaveParameter(sSettingName+<§$0074§>, gnPaperSource)
+      SaveParameter(sSettingName+<§$0075§>, gbCollate)
+      SaveParameter(sSettingName+<§$0076§>, gnColor)
+      SaveParameter(sSettingName+<§$0077§>, gnScale)
+      SaveParameter(sSettingName+<§$0078§>, gnPaperSize)
+      
+      SaveParameter(sSettingName+<§$0079§>, gsCustomPaperFormat) 
+      SaveParameter(sSettingName+<§$007a§>, gnPageHeight)
+      SaveParameter(sSettingName+<§$007b§>, gnPageWidth)
+      
+      SaveParameter(sSettingName+<§$007c§>, gnNbCopy) 
+      SaveParameter(sSettingName+<§$007d§>, gnOrientation) 
+      SaveParameter(sSettingName+<§$007e§>, gnQuality)	
+      SaveParameter(sSettingName+<§$007f§>, gnDuplex) 
+      SaveParameter(sSettingName+<§$0080§>, gnYResolution) 
+      SaveParameter(sSettingName+<§$0081§>, gnTrueType)
+      
+      // Encryption to have "displayable" characters only
+      SaveParameter(sSettingName+<§$0082§>, Crypt(gbufSpecificParameters, "", cryptNone, True))
+      
+      RESULT True
+     type : 458752
+   -
+     name : LoadPrinterSettings
+     procedure_id : 1643823811169328315
+     type_code : 15
+     code : |1-
+      ////Loads the printout parameters of the specified model
+      // Syntax:
+      //[ <Result> = ] LoadPrinterParameters (<sSettingName> is string [, <bApplySpecificParameters> is boolean])
+      //
+      // Parameters:
+      //	sSettingName (ANSI string): Name of the print model whose parameters must be retrieved
+      //	bApplySpecificParameters (boolean - default value=1): Boolean set to True (by default) in order for the "specific" parameters of the printer to be taken into account by the parameters that will be applied to the printer driver
+      // Return value:
+      // 	ANSI string: Empty string if no error, otherwise a string containing the list of parameters that have not been restored
+      
+      PROCEDURE LoadPrinterSettings(LOCAL sSettingName is string, LOCAL bApplySpecificParameters is boolean = True)
+      
+      // Settings of the current printer by default
+      GetCurrentParameters()
+      
+      gbExistingParameter = LoadParameter(sSettingName+<§$0072§>, False)
+      gsPrinterName = LoadParameter(sSettingName+<§$0073§>, gsPrinterName)
+      gnPaperSource = LoadParameter(sSettingName+<§$0074§>, gnPaperSource)
+      gbCollate = LoadParameter(sSettingName+<§$0075§>, gbCollate)
+      gnColor = LoadParameter(sSettingName+<§$0076§>, gnColor)
+      gnScale = LoadParameter(sSettingName+<§$0077§>, gnScale)
+      gnPaperSize = LoadParameter(sSettingName+<§$0078§>, gnPaperSize)
+      
+      gsCustomPaperFormat = LoadParameter(sSettingName+<§$0079§>, gsCustomPaperFormat) 
+      gnPageHeight = LoadParameter(sSettingName+<§$007a§>, gnPageHeight)
+      gnPageWidth = LoadParameter(sSettingName+<§$007b§>, gnPageWidth)
+      
+      gnNbCopy = LoadParameter(sSettingName+<§$007c§>, gnNbCopy) 
+      gnOrientation = LoadParameter(sSettingName+<§$007d§>, gnOrientation) 
+      gnQuality = LoadParameter(sSettingName+<§$007e§>, gnQuality)	
+      gnDuplex = LoadParameter(sSettingName+<§$007f§>,	gnDuplex) 
+      gnYResolution = LoadParameter(sSettingName+<§$0080§>, gnYResolution) 
+      gnTrueType = LoadParameter(sSettingName+<§$0081§>, gnTrueType)
+      
+      // Encryption to have "displayable" characters only
+      gbufSpecificParameters = Uncrypt(LoadParameter(sSettingName+<§$0082§>, Crypt(gbufSpecificParameters, "", cryptNone, True)), "", cryptNone, True)
+      // If a setting exists
+      IF gbExistingParameter THEN
+      	// Applies the parameters specified in the variables of the set of procedures
+      	RESULT ApplyParameters(bApplySpecificParameters)
+      ELSE
+      	RESULT ""	
+      END
+     type : 458752
+   -
+     name : InitializePrintAccordingToModel
+     internal_properties : CAAAAAgAAABe73HoJ6SUceLgxYw7gScgMNuGhyK53cCNXVQA/MkovcohkdtrNXVg/SztfTR4Rg9oySXCKqq6zXju85ey9VBbdjxQfTPBrLtUHyXazgV+AxBtaOMMp3Cx44v4n+5FJu14tcPirQJ7wg8SemGF
+     procedure_id : 1643823811169393851
+     type_code : 15
+     code : |1-
+      //Initializes the printer and the print parameters according to a print model
+      // Syntax:
+      //[ <Result> = ] InitializePrintAccordingToModel (<sModelName> is string [, <bSelectPrinter> is boolean [, <bAllowToStoreNewParameters> is boolean]])
+      //
+      // Parameters:
+      //	sModelName (ANSI string): Name of the print model that corresponds to the print that will be performed
+      //	bSelectPrinter (boolean - default value=1): boolean set to True (by default) to systematically open a window for selecting the destination printer. Otherwise, a window will be opened only if the default printer is not found or not defined.
+      //	bAllowToStoreNewParameters (boolean -  default value=1): Boolean set to True (by default) to propose to store the parameters if a modification is performed
+      // Return value:
+      // 	boolean: True if the print settings have been applied
+      //Example:
+      //		Hourglass(True)
+      //		//Initialize the setting for printing an invoice
+      //		IF NOT InitializePrintAccordingToModel("OrderInvoiceModel") THEN	
+      //			HourGlass(False)
+      //			Info("Print canceled")
+      //			RETURN
+      //		END
+      //		HourGlass(False)
+      //		iPreview()
+      //		iPrintReport(InvoiceReport)
+      
+      PROCEDURE InitializePrintAccordingToModel(LOCAL sModelName is string, LOCAL bSelectPrinter is boolean = True, LOCAL bAllowToStoreNewParameters is boolean = True)
+      
+      sSelectedPrinter is string
+      sErrorList is string
+      
+      
+      // Loads the printout parameters of the specified model
+      LoadPrinterSettings(sModelName)
+      
+      // Were settings specified for this type of print?
+      IF gbExistingParameter THEN
+      	
+      	// Yes
+      	// Printer selection
+      	IF bSelectPrinter THEN
+      		sSelectedPrinter = Open(WIN_PrinterSelection, gsPrinterName)
+      		IF sSelectedPrinter = "" THEN RESULT False // Abandon
+      	ELSE
+      		// No selection, take the printer associated with this print model
+      		sSelectedPrinter = gsPrinterName
+      	END
+      	
+      	// Other printer?
+      	IF NOT sSelectedPrinter ~= gsPrinterName THEN
+      	
+      		// Change the name of the printer (and only the name of the printer)
+      		gsPrinterName = sSelectedPrinter
+      		// Try to apply the settings to this "other printer" (except for specific settings)
+      		sErrorList = ApplyParameters(False, False)
+      		IF sErrorList <> "" THEN
+      			// Problem assigning some parameters
+      			IF NOT YesNo(No, sErrorList, <§$0083§>) THEN
+      				RESULT False
+      			END
+      		END
+      		
+      	ELSE
+      		// Same printer, everything is OK
+      		RESULT True
+      	END
+      	
+      ELSE
+      	
+      	// No parameter for this model
+      	IF NOT iParameter()	 THEN
+      		// Abandon
+      		RESULT False
+      	END
+      	
+      END
+      
+      // Retrieve the information about the driver (including the specific information)
+      GetCurrentParameters()
+      
+      // In this case, either it is a new model, or settings other than the default settings are used
+      
+      // Save these new settings?
+      IF bAllowToStoreNewParameters THEN
+      	SWITCH Confirm(<§$0084§>+CR,NameInClearParametersRetrieved()+CR, <§$0085§>) 
+      		CASE Yes : SavePrinterSettings(sModelName)
+      		//CASE No: //Nothing to do, the parameters are configured but they are not stored
+      		CASE Cancel : RESULT False //cancelation
+      	END
+      END
+      
+      // Print
+      RESULT True
+     type : 458752
+   -
+     name : ModifyModelParameters
+     procedure_id : 1643823811169459387
+     type_code : 15
+     code : |1-
+      //Modifies or saves the print characteristics associated with a print model
+      // Syntax:
+      //[ <Result> = ] ModifyModelParameters (<sModelName> is string)
+      //
+      // Parameters:
+      //	sModelName (ANSI string): Name of the print model
+      // Return value:
+      // 	boolean: True if the parameters were modified
+      //Example:
+      //		Hourglass(True)
+      //		//modify the setting for the model of labels
+      //		IF ModifyModelParemeter("LabelModel") THEN
+      //			Info("The new settings have been taken into account. Details:"+cr,PrinterSettings.PlainNameRetrievedParameters())
+      //		END
+      //		HourGlass(False)
+      
+      
+      PROCEDURE ModifyModelParameters(LOCAL sModelName is string)
+      
+      sSelectedPrinter is string
+      sErrorList is string
+      
+      
+      // Loads the printout parameters of the specified model
+      LoadPrinterSettings(sModelName)
+      
+      // Existing setting?
+      IF gbExistingParameter THEN
+      	
+      	// Printer selection
+      	sSelectedPrinter = Open(WIN_PrinterSelection, gsPrinterName)
+      	IF sSelectedPrinter="" THEN RESULT False // Abandon
+      	
+      	// Other printer?
+      	IF NOT sSelectedPrinter ~= gsPrinterName THEN
+      		
+      		// Change the name of the printer (and only the name of the printer)
+      		gsPrinterName = sSelectedPrinter
+      		// Try to apply the settings to this "other printer" (except for specific settings)
+      		sErrorList = ApplyParameters(False, False)
+      		IF sErrorList <> "" THEN
+      			Info(<§$0086§>+CR, sErrorList, CR+<§$0087§>)
+      		END
+      		
+      	END
+      	
+      END
+      
+      // Allows the user to modify the printer and the print parameters
+      IF iParameter() THEN
+      	// Retrieve the selected information
+      	GetCurrentParameters()
+      	// Saves the information
+      	SavePrinterSettings(sModelName)	
+      	RESULT True
+      ELSE
+      	RESULT False
+      END
+     type : 458752
+   -
+     name : DeletePrintModel
+     procedure_id : 1643823811169524923
+     type_code : 15
+     code : |1-
+      //DeleteModelParameters Procedure
+      //
+      //The DeleteModelParameters procedure is used to delete a model and its parameters.
+      //
+      //Syntax:
+      //DeletePrintModel (<sSettingName> is string)
+      //
+      //Parameters:
+      //	sSettingName (ANSI string): String
+      //Example:
+      //
+      //DeletePrintModel("LabelModel")
+      
+      //Name of the model that will be deleted.
+      //<Result>: boolean
+      //True if the operation was successful, False otherwise
+      PROCEDURE DeletePrintModel(LOCAL sSettingName is string)
+      
+      DeleteParameter(sSettingName+<§$0072§>)
+      DeleteParameter(sSettingName+<§$0073§>)
+      DeleteParameter(sSettingName+<§$0074§>)
+      DeleteParameter(sSettingName+<§$0075§>)
+      DeleteParameter(sSettingName+<§$0076§>)
+      DeleteParameter(sSettingName+<§$0077§>)
+      DeleteParameter(sSettingName+<§$0078§>)
+      
+      DeleteParameter(sSettingName+<§$0079§>) 
+      DeleteParameter(sSettingName+<§$007a§>)
+      DeleteParameter(sSettingName+<§$007b§>)
+      
+      DeleteParameter(sSettingName+<§$007c§>) 
+      DeleteParameter(sSettingName+<§$007d§>) 
+      DeleteParameter(sSettingName+<§$007e§>)	
+      DeleteParameter(sSettingName+<§$007f§>) 
+      DeleteParameter(sSettingName+<§$0080§>) 
+      DeleteParameter(sSettingName+<§$0081§>)
+      
+      DeleteParameter(sSettingName+<§$0082§>)
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : ParametreImprimante
+resources :
+ string_res :
+  identifier : 0x15350bdc00a49229
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      en-GB : "Unable to initialize <%2> printer. Error details: %1\r\nCheck whether the printer is switched on, whether it is configured properly and whether it is accessible if it is a network printer.\r\nCurrent printer: <%3>\r\n"
+     index : 0
+   -
+     text :
+      en-GB : "Unable to initialize the paper source to: <%1>, the accepted paper source is: <%2>+\r\n"
+     index : 1
+   -
+     text :
+      en-GB : "Unable to initialize the management mode of colors to: <%1>, the accepted management mode of colors is: <%2>\r\n"
+     index : 2
+   -
+     text :
+      en-GB : "Unable to initialize the scale to: <%1>, the accepted scale is: <%2>\r\n"
+     index : 3
+   -
+     text :
+      en-GB : "Unable to initialize the paper format to: <%1>, the accepted paper format is: <%2>\r\n"
+     index : 4
+   -
+     text :
+      en-GB : "\tUnable to initialize the name of paper format to: <%1>, the accepted name of paper format is: <%2>\r\n\t"
+     index : 5
+   -
+     text :
+      en-GB : "\tUnable to initialize the paper height to: <%1>, the accepted paper height is: <%2>\r\n\t"
+     index : 6
+   -
+     text :
+      en-GB : "\tUnable to initialize the paper width to: <%1>, the accepted paper width is: <%2>\r\n\t"
+     index : 7
+   -
+     text :
+      en-GB : "Unable to initialize the number of copies to: <%1>, the accepted number of copies is: <%2>\r\n"
+     index : 8
+   -
+     text :
+      en-GB : "Unable to initialize the collate mode of pages to: <%1>, the accepted collate mode of pages is: <%2>\r\n\t"
+     index : 9
+   -
+     text :
+      en-GB : "Unable to initialize the paper orientation to <%1>, the accepted orientation is: <%2>\r\n"
+     index : 10
+   -
+     text :
+      en-GB : "Unable to initialize the printout quality to: <%1>, the accepted printout quality is: <%2>\r\n"
+     index : 11
+   -
+     text :
+      en-GB : "Unable to initialize the duplex mode to: <%1>, the accepted duplex mode is: <%2>\r\n"
+     index : 12
+   -
+     text :
+      en-GB : "Unable to initialize the vertical resolution to: <%1>, the accepted vertical resolution is: <%2>\r\n"
+     index : 13
+   -
+     text :
+      en-GB : "Unable to initialize the printout parameters of TrueType fonts to: <%1>, the accepted printout parameter of TrueType fonts is: <%2>\r\n"
+     index : 14
+   -
+     text :
+      en-GB : "Unable to initialize the specific parameters of the printer.\r\n"
+     index : 15
+   -
+     text :
+      en-GB : Automatic paper feed
+     index : 16
+   -
+     text :
+      en-GB : Lower Tray
+     index : 17
+   -
+     text :
+      en-GB : Cassette Tray
+     index : 18
+   -
+     text :
+      en-GB : Envelope Tray
+     index : 19
+   -
+     text :
+      en-GB : Manual envelope feed
+     index : 20
+   -
+     text :
+      en-GB : Large capacity tray
+     index : 21
+   -
+     text :
+      en-GB : Large Format Tray
+     index : 22
+   -
+     text :
+      en-GB : Upper Tray
+     index : 23
+   -
+     text :
+      en-GB : Manual paper feed
+     index : 24
+   -
+     text :
+      en-GB : Middle Tray
+     index : 25
+   -
+     text :
+      en-GB : Small Format Tray
+     index : 26
+   -
+     text :
+      en-GB : Tractor Paper Feed
+     index : 27
+   -
+     text :
+      en-GB : Only one feed
+     index : 28
+   -
+     text :
+      en-GB : "Specific Printer Tray (#%1)"
+     index : 29
+   -
+     text :
+      en-GB : "Collated Pages (1,1,1) (2,2,2) ... (N,N,N)"
+     index : 30
+   -
+     text :
+      en-GB : "Uncollated Pages (1,2,...,N) (1,2,...,N) (1,2,...,N)"
+     index : 31
+   -
+     text :
+      en-GB : Print in color
+     index : 32
+   -
+     text :
+      en-GB : Printing in grayscale
+     index : 33
+   -
+     text :
+      en-GB : "Specific Print Color (#%1)"
+     index : 34
+   -
+     text :
+      en-GB : "%1 %"
+     index : 35
+   -
+     text :
+      en-GB : 10 x 14 inch paper
+     index : 36
+   -
+     text :
+      en-GB : 11 x 17 inch paper
+     index : 37
+   -
+     text :
+      en-GB : A3 paper (297 x 420 mm)
+     index : 38
+   -
+     text :
+      en-GB : A4 paper (210 x 297 mm)
+     index : 39
+   -
+     text :
+      en-GB : Small A4 (210 x 297 mm)
+     index : 40
+   -
+     text :
+      en-GB : A5 (148 x 20 mm)
+     index : 41
+   -
+     text :
+      en-GB : Fanfold paper (8.5 x 12 inches)
+     index : 42
+   -
+     text :
+      en-GB : Fanfold paper (8.5 x 13 inches)
+     index : 43
+   -
+     text :
+      en-GB : B4 paper (250 x 354 mm)
+     index : 44
+   -
+     text :
+      en-GB : B5 paper (182 x 257 mm)
+     index : 45
+   -
+     text :
+      en-GB : Fanfold paper (14.875 x 11 inches)
+     index : 46
+   -
+     text :
+      en-GB : "Envelope #9 (3.875 x 8.875 inches)"
+     index : 47
+   -
+     text :
+      en-GB : "Envelope #10 (4.125 x 9.5 inches)"
+     index : 48
+   -
+     text :
+      en-GB : "Envelope #11 (4.5 x 10.375 inches)"
+     index : 49
+   -
+     text :
+      en-GB : "Envelope #12 (4.5 x 4.5 x 11 inches)"
+     index : 50
+   -
+     text :
+      en-GB : "Envelope #14 (5 x 11.5 inches)"
+     index : 51
+   -
+     text :
+      en-GB : B4 envelope (250 x 353 mm)
+     index : 52
+   -
+     text :
+      en-GB : B5 envelope (176 x 250 mm)
+     index : 53
+   -
+     text :
+      en-GB : B6 envelope (176 x 125 mm)
+     index : 54
+   -
+     text :
+      en-GB : C3 envelope (324 x 458 mm)
+     index : 55
+   -
+     text :
+      en-GB : C4 envelope (229 x 324 mm)
+     index : 56
+   -
+     text :
+      en-GB : C5 envelope (162 x 229 mm)
+     index : 57
+   -
+     text :
+      en-GB : C6 envelope (114 x 162 mm)
+     index : 58
+   -
+     text :
+      en-GB : C65 envelope (114 x 229 mm)
+     index : 59
+   -
+     text :
+      en-GB : DL envelope (110 x 220 mm)
+     index : 60
+   -
+     text :
+      en-GB : Envelope 110 x 230 mm
+     index : 61
+   -
+     text :
+      en-GB : Envelope 3.875 x 7.5 inches
+     index : 62
+   -
+     text :
+      en-GB : Envelope 3.625 x 6.5 inches
+     index : 63
+   -
+     text :
+      en-GB : Executive paper (7.5 x 10.5 inches)
+     index : 64
+   -
+     text :
+      en-GB : Folio paper (8.5 x 13 inches)
+     index : 65
+   -
+     text :
+      en-GB : Ledger paper (17 x 11 inches)
+     index : 66
+   -
+     text :
+      en-GB : Legal paper (8.5 x 14 inches)
+     index : 67
+   -
+     text :
+      en-GB : Small letter (8.5 x 11 inches)
+     index : 68
+   -
+     text :
+      en-GB : Letter paper (8.5 x 11 inches)
+     index : 69
+   -
+     text :
+      en-GB : Note paper (8.5 x 11 inches)
+     index : 70
+   -
+     text :
+      en-GB : Quarto paper (215 x 275 mm)
+     index : 71
+   -
+     text :
+      en-GB : Statement paper (5.5 x 8.5 inches)
+     index : 72
+   -
+     text :
+      en-GB : Tabloid paper (11 x 17 inches)
+     index : 73
+   -
+     text :
+      en-GB : Size C sheet
+     index : 74
+   -
+     text :
+      en-GB : Size D sheet
+     index : 75
+   -
+     text :
+      en-GB : Size E sheet
+     index : 76
+   -
+     text :
+      en-GB : Custom Paper Size
+     index : 77
+   -
+     text :
+      en-GB : "Specific paper size (#%1)"
+     index : 78
+   -
+     text :
+      en-GB : "%1 copies"
+     index : 79
+   -
+     text :
+      en-GB : Print in landscape mode
+     index : 80
+   -
+     text :
+      en-GB : Print in portrait mode
+     index : 81
+   -
+     text :
+      en-GB : "Specific Orientation (#%1)"
+     index : 82
+   -
+     text :
+      en-GB : Print in draft mode
+     index : 83
+   -
+     text :
+      en-GB : Print in low quality
+     index : 84
+   -
+     text :
+      en-GB : Print in medium quality
+     index : 85
+   -
+     text :
+      en-GB : Print in high quality
+     index : 86
+   -
+     text :
+      en-GB : Print Resolution in %1 DPI
+     index : 87
+   -
+     text :
+      en-GB : Horizontal Duplex Mode
+     index : 88
+   -
+     text :
+      en-GB : Print on a single side
+     index : 89
+   -
+     text :
+      en-GB : Vertical Duplex Mode
+     index : 90
+   -
+     text :
+      en-GB : "Printout in specific duplex mode (#%1)"
+     index : 91
+   -
+     text :
+      en-GB : "%1 DPI"
+     index : 92
+   -
+     text :
+      en-GB : TrueType font printed in bitmap
+     index : 93
+   -
+     text :
+      en-GB : Downloaded TrueType font
+     index : 94
+   -
+     text :
+      en-GB : TrueType font of the device (printer).
+     index : 95
+   -
+     text :
+      en-GB : "Specific management of TrueType fonts (#%1)"
+     index : 96
+   -
+     text :
+      en-GB : No printout model was loaded
+     index : 97
+   -
+     text :
+      en-GB : "Printer Name: %1\r\n"
+     index : 98
+   -
+     text :
+      en-GB : "Paper source: <%1>\r\n"
+     index : 99
+   -
+     text :
+      en-GB : "Mode for page collate: <%1>\r\n"
+     index : 100
+   -
+     text :
+      en-GB : "Management mode of color: <%1>\r\n"
+     index : 101
+   -
+     text :
+      en-GB : "Scale: <%1>\r\n"
+     index : 102
+   -
+     text :
+      en-GB : "Paper Size: <%1>\r\n"
+     index : 103
+   -
+     text :
+      en-GB : "Name and Dimension of Form or Paper Size: <%1> (W x H: %2 mm x %3 mm or %4 \" x %5 \")\r\n"
+     index : 104
+   -
+     text :
+      en-GB : "5,1f"
+     index : 105
+   -
+     text :
+      en-GB : 5.2f
+     index : 106
+   -
+     text :
+      en-GB : "Name of paper size or name of the form: <%1>\r\n"
+     index : 107
+   -
+     text :
+      en-GB : "Number of Copies: <%1>\r\n"
+     index : 108
+   -
+     text :
+      en-GB : "Paper orientation: <%1>\r\n"
+     index : 109
+   -
+     text :
+      en-GB : "Printout quality: <%1>\r\n"
+     index : 110
+   -
+     text :
+      en-GB : "Vertical resolution: <%1>\r\n"
+     index : 111
+   -
+     text :
+      en-GB : "Duplex Mode: <%1>\r\n"
+     index : 112
+   -
+     text :
+      en-GB : "Management mode of TrueType fonts in <%1>\r\n"
+     index : 113
+   -
+     text :
+      en-GB : _bFound
+     index : 114
+   -
+     text :
+      en-GB : _iPrinterName
+     index : 115
+   -
+     text :
+      en-GB : _iPaperSource
+     index : 116
+   -
+     text :
+      en-GB : _iCollate
+     index : 117
+   -
+     text :
+      en-GB : _iColor
+     index : 118
+   -
+     text :
+      en-GB : _iScale
+     index : 119
+   -
+     text :
+      en-GB : _iPaperSize
+     index : 120
+   -
+     text :
+      en-GB : _iFormatCustomPaper
+     index : 121
+   -
+     text :
+      en-GB : _iPageHeight
+     index : 122
+   -
+     text :
+      en-GB : _iPageWidth
+     index : 123
+   -
+     text :
+      en-GB : _iCopies
+     index : 124
+   -
+     text :
+      en-GB : _iOrientation
+     index : 125
+   -
+     text :
+      en-GB : _iQuality
+     index : 126
+   -
+     text :
+      en-GB : _iDuplex
+     index : 127
+   -
+     text :
+      en-GB : _iYResolution
+     index : 128
+   -
+     text :
+      en-GB : _iTrueType
+     index : 129
+   -
+     text :
+      en-GB : _iExtraParameters
+     index : 130
+   -
+     text :
+      en-GB : Continue to print?
+     index : 131
+   -
+     text :
+      en-GB : The print will continue with the following setting
+     index : 132
+   -
+     text :
+      en-GB : Do you want to store these settings as the new default settings for this type of print?
+     index : 133
+   -
+     text :
+      en-GB : "Caution: some settings have not been applied to this new printer: "
+     index : 134
+   -
+     text :
+      en-GB : Cancel the dialog box of the printer to ignore these new settings.
+     index : 135
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

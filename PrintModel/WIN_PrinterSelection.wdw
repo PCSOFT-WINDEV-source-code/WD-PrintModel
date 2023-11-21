@@ -1,0 +1,337 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WIN_PrinterSelection
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : WIN_PrinterSelection
+ identifier : 0x26d0090b078a9837
+ internal_properties : CAAAAAgAAAAFT8foenTAvau8gSgcxW3TgyTaajou3YXkJpnVXkBus6IxDLeguPn3q1ZONVMZZ0QCYJe7PECujN9k3Bbn27/srpOIO2TIUhH4UQWjoP3DkZYky54VW/APXqikzlUyPH73zB4rGSDIz0bdU3VPSP4nm8nQMXQD4rCRw2XyTRHk/vdFec7LmSaiUTqYhILaqRXTzR3/855XG1FXungBN6wVSM8i2vDaerNAUIWBnBn4EkcgZledmYCMfq6uHcCkwtwCw0fbmkraDy/InNKTrVyyuKtuKU1QgLX24kao2J8g+hHDZFmDcmFbHFuicGBGCV9AYQ00wB0Rno8wZz/DCUB1mPptPmXPsfT9kTNYy+4OgpGJUNgTIFdq4WIZ55q/OlTAuVgQ/73n7Jgdi7ZTuwjXf4HNhIbvyAJNQ+0+UAVknzZDTA+5eCmCvX1DdOjNlnX3djSzO1hp3P0hhrd4hb7Tk9QkUh0z0kCAT/OAhRL3aN5WZDa/gy3xVIl+Kc70+X4fQOuFhj9hQe56PCWETg1X0eYM2KtmvrHYWkJXITMxkfUbrhV0CxoCcSlJ7o7YwZKEMbuxFL7JzYM8xLOQ400+BmHJoxKMarioBpyzeqo5axuOcixGbCLcugr1Zlcr1CYW50FImSHTrMXN4Lndmnq/G7uZgo3+H5cYonYu7Ci9TZtEtR72vpq2ZWPrKxHI/bi0nj8LhYj4mjeoZLluUrw7RUpV52RzdhSeXNQqfx2c7S0q5g==
+ properties :
+  x : 79
+  y : 3
+  width : 376
+  height : 245
+  widthClient : 374
+  heightClient : 213
+ controls :
+  -
+    name : STC_PRINTERS
+    identifier : 0x26d0090b078b9837
+    internal_properties : CAAAAAgAAABghbRsWpYoYNkJpLz6yZBT2B57BvWH/MSHqD7568A8qZpjoOKbea5konpukPjcu0MVDpN/FKjtOyjbp2NpPNdJ4OFd6yLF6L/oovesnJJf5Jfo3OWHL10eg4J79FikCdkkX5lHGve5iHYRNHcslstRk3cKYEw0NfSCgE+qnYVfvymfQL1kXGGVfhUTq3sM+4IQF5RWbYiYm/+ZVs8eOVZB49hCjKv6JDQ8kR/PrbIFMKb3d+CUtNHFFA2SnXe9yBuYaMtAM41iKlayAWJBgCvXOmhTJ3WMgb3gGZGR4H4ZKweMn4lF3lheL7OvaKCV3MOE9cbHEnKr2/EXpoWVG2fzK1B5DUTUjKDRuiGcM9i+GN+GhlZrYuCxUpKZ0kB+2f3v3+13mm72v4l0D7D1ij2pjKKxL+CJlUbWWinftRP5xKrmk7JTNxiCj5GIERhf/nYYNHe8ToMZtuhWLTBT702raqc1knyo+QJEDEN7F8sw4Toy12UohX0WF21cr5v13o6Z3eY7MiVLgqg=
+    properties :
+     x : 6
+     y : 6
+     width : 370
+     height : 19
+    type : 3
+    code_elements :
+     type_code : 2
+     p_codes : []
+  -
+    name : RADIO_PRINTER
+    identifier : 0x26d0090b078c9837
+    internal_properties : CAAAAAgAAABhBK80+kaEb4tMD/bma7sOS/OZNi/iRWs1lZpri4PYMuBVKwJNhMIBBPvUf+5c5w9ZxsRmYvXCr0U1L4puwDuVzrni8v6HA9VxkXgU5wz84md+v/iJE7jSMoykWJgFrYFL93vv2TC4sHoBYcu+0BOcZyC9PGXzf/w+Yxt7SHY8MuKMt+xNZQCD3bPV0fly7TcQzhKahm1mQWSRqkw+2igR/3p8Fy8Z0Llp/yPFcAIu0JaqBkjIx93ttp5kGb9vEukGrAeNArMFlWw1WGT6XrYfDOFMen8kY1oWLry7n0vE/q/MfIKuhB1qS4f3j/vabq+BxS0J/GlbpEspRm4u76knb49zFzAgMX62l6H5yg4SHlbBQxn+1P6joriaZDqscxQBfFGClRuKewrOxgmYP6ZapwOcFPQ4OSsy+s5kEyruSbQgh1TF+Eta1iFtH7qdZl+tWUGMWlzLnxDqJt8IT4nMlxO5+lfHiF8xVlz0xKqi+cZbVBtVkJt2OlxcyRZeC8homtc5f7J7844GwGI3ahZMWkl0ydXCJQMSdKpi931BKU1IAvujJxiPsetKCvcmztSo7Trcwc0so/0qtk+PG6BE8L2+/CNys7kun7KIpgHjfPhEwwnSzPoBPJ4dmsz3paoL9s142WUR9yA8jH3yAJQxeBsHjmHhG3gEOU+FBFvukRFYDvmwSCoRr2P3dXRT9j5pExv+2pdsbM8dCCi1STQHP4Aga48v+J23gFK3Foqb51kYwKSiKnNNCbFSszkgwpNKg3jg2+rzZurGPs6yG3Y1zoTGqs1BlZsnjNCK6OBE2OLX4tQpGWiosZqXZVy9Rta149RXHUGS7sHS0tibZbd1J1Nfv7KI5fCOgGoJEcmXgQtRZFf2Oj2n/GZPB1w5XUFhDnZd8HQBnpoAhTDCfmzOk6QMZzzIjsHa/KBqmULIAbosh9c/uxj37DO75jbF/bnxd8ZBIV9r67HS4I41TGsFvvQd7tDQlEZcOmQ/MiFpY7W7aSrhkhqTdkExd140LQPVhvzYnHPh5umrnxCtjSwjIus2Mfnu11ZXpG78c3xxKa9uUW8BKfEaWYDqrEWxy1HO6hNMbXUMH77lUY9BxygPJAhQvjh71PwefHzBONuYt3JJqsQOtnbXMYUu7b6y0WYpkPjpkjGx7H940OFsAlyz4Jdw10lcSGBftbrK6wtI7IsbYOeE3Vo=
+    properties :
+     x : 6
+     y : 31
+     width : 370
+     height : 100
+    options :
+     -
+       internal_properties : CAAAAAgAAAB/zlJwADaPCPiiylyk2ALn2Rsh9ij+uzie5eZpyK9lHKV9gssXy0u79u/WZkMwHCLWg2sdZZIaguY2RiRtFPU4jWAPE3thrXZq9NI515lOBvLno67BXRz2B0DaOTyqE3RvDhX0Z+GCiCQylhkNSB50DTPZuzmarLfAeITIL0kx1Llf/vk=
+     -
+       internal_properties : CAAAAAgAAAAyCRm93/TB3ZUcdf5Xi/DQTBeNruAtX+iiI5b7IkG9rrZZLKENuQWRHAW4xIlG7uy0XcXbO3j0gKQ0mJI7VTdmS9a6fsTYJfZKCB6JK/1GDnJ3z57VwXwOP/yGScB2OwQH5r9t3uh13QE3KTZMFdqUaT/dNpHG97EyQwkCZATyG36ku7w=
+    type : 6
+    controls : []
+    code_elements :
+     type_code : 6
+     p_codes : []
+  -
+    name : BNT_DEFAULT
+    identifier : 0x26d0090b078f9837
+    internal_properties : CAAAAAgAAABiCLYYT/hNPCkU+A7s18Y9bIELRmlmaUx2/w7Tve/qG6s4V9lb94T0SaRhrJLfUCcHy8JDpMgpRyPINUcARymJadFvLTmuiZkLYqdVYAYtsDeZCHYBjM6lIbagQAzU0VII9HJELUH+huW6vrd51U8EyqIu6U1HdIrLHONDCCpF+FHgqbBAZ0z8tQ5Ozs/pnFuLj0DbjxBedMdrKzMQKhCiyu06sxCqGqClFaPvWjF1I1soF7s+ZytmoW4WHA4q4DL57DpHC+4uqrYunIhM8BwPGMB3D7g7ReZZHhFY9OPUJHzCwIOYgzBs+mTvxtkKt6/SH07X88uMS6yxP3o4MZcXpKu4OlPmfx0TQaq8IY9w1WkIN6mYYN8HF9LXJme916hiHFqJ6yUtl7Gm3UoNuG7MDK+3TwuViapD15CLXZH8d5Wp+6BffZ14a7lKT1Vp2BI70kI3nfzeKo5c5CSEhY9FIylGhFVF2O4RZqkNAhjr2ufxNglunBiDsU75X4yISzxn7b2obg3qjtCZMjVoZy0eYQ+fHRrd0NCLS4NVDkZT7y4PCxw3pXz+E1XuIuKrSLrmKEb9Jko6uIsSUVC9pKKnKqfa/+65wSepII8G/dg1kgGTtqBgEJljkO56kgH6NqsFRPiQld6R6Y87W7CNfKNwzsmGK9YdKlAyG7w9SEcQ+Wj+UTsgsckmnigdWXkfTAoQeuZdpflkZgGfVZtvl+W4k2eHetAOgPsZIhsl0gnEO0X8L98QPZoEsNHLFI/CzfIxif0TNrLP3Uomm6K2a9AMAnEY9XEMuhXTzgKA5XLc+FVrEJr20hQRdYVlxHaCfpR9lO3WfjTCcPsq9bo233VfXtcxRajbbH2qqCRXsLLrp/CMkxdt3h4FILIDcPUHewVI+dI/0H1Fdzoq+P14QTy1Fl9xthK37X3m7WSy3YSlI1Tl0GMTE50QHlBu2R78WxdvLZsN9fgHg131WTeg6xIdbgUOWbwMlF8UsBApySmo3gBt4Q==
+    properties :
+     x : 288
+     y : 83
+     width : 80
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         //a selected printer?
+         IF COMBO_LIST_PRINTER_LIST[COMBO_LIST_PRINTER_LIST] = -1 THEN
+         	Error(<§$0001§>)
+         ELSE
+         	//Display the default printer
+         	IF iConfigure(COMBO_LIST_PRINTER_LIST[COMBO_LIST_PRINTER_LIST], False) THEN
+         		// Modify the default printer that is displayed
+         		EDT_DEFAULTPRINTER = COMBO_LIST_PRINTER_LIST[COMBO_LIST_PRINTER_LIST]
+         	ELSE
+         		// Problem displaying the default printer
+         		Error(<§$0002§>, ErrorInfo())
+         	END
+         END	
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_CANCEL
+    identifier : 0x26d0090b07909837
+    internal_properties : CAAAAAgAAABNV7yww18mbvyWUQAUbnVTVtqglHEBTvFGemCkSjYZcSOt3+AmWrprve/Tt5hOMcJuALwGH/Okh2NXNWZM3QF2DMwEdLEHZ90GYOjoeN2v6Jdkxqv+qJccXqj3RLiWOuK7xPwgOFeFvHMLe8WVMPO4dP5QnrdI9GlN6JagQHuD95BI+E6TlfmhhqUUIyO/LcSarAYDnJVJNVEwji4fnwoKCW2GxlqVoBBu0tj3pEWIvH3WF6+FaqgwPX7C/7dtyKPZzWCWBsaoSrlPK3oiRRgBLFWBTxk1irDKjESrAuLdBXLO1n/w62HoheTrj2rJsN/W1IOkkHty54wysioDT6X2pzjW+QTo94yD1/4HeDfROZthqzb4H0scNRv90IPRhfuC78xfUO1cC4nsVf/em33aEvEeAZWzS6925OIfGOmmVZYl6+kzKDxPRwMqb9HlX6EKr3t8ddF+6ef0oeRhuko8ZPEwVbOMXQApk6KVWv/byjPoZLgzMPcH97r7+LKnuP98y2qqHFP4rxcD4dwk2qoKTHnNF4toBuLwhXaR3EQktfkorJE3KmsLIXSPQr5eGg02i4dSLycdBWPbPFTCBl2p2bgmo7u0v/d9O+FQvCfqjqbWTxtgJLtLXEwvRfUMdrcjVYScytOwFkCxctEYyQG/n6xhVa1/HODkZ/jry7XSKhyUdDGsYFeQKmjclhnaa8frttozsyYlw9mddJzAQsxZ2RJDIgiVdqo5vruKj+cQ9cFaYBF7YSBmYHWxwMbDDkU+0W/+m0jUx2jux0iwwHE9aNlnLxjYujRfmXC1kyEG3JyT/x/bn+zGW5te4qgYuvjqtyodKKgcvoMmqp5KBmagRv3rmNwE7y9gP6CZoE4ooHQGZb9ZmiKlpONZLkfEqPOc4R8q996jfJLiYbQR82L60QQsCDroNWUWROVEVg2Jah1pQ81EmR9SGLJ65zvo2TgY0VUa6RvLraaF7KBInfzaGSpxFyv203XS9VgOrO6iJ47lLy5AlTYkhGyN8yGlqR+T3enMLwoGQacAkQo=
+    properties :
+     x : 287
+     y : 183
+     width : 80
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         // Clears the name of the selected printer
+         gsNameSelectedPrinter=""
+         // Closes the window and returns the name of the selected printer
+         Close("",gsNameSelectedPrinter)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : EDT_DEFAULTPRINTER
+    identifier : 0x26d0090b07919837
+    internal_properties : CAAAAAgAAADlbuH/S2el+dxUsY4unMsmEk2vDcTqfvw8MWY66fXWm6WCAdFZKJNN3gBpV0zi2h8uRICVRY9qQLniRy5xNzqCeWsBpSkWyZwqEROjq06TAsWqkUJam3fAZ3iLw12+7R1f012ZufHw46j+4AYEVDocnkg0/7blygcNxKUrQaxd66O33CRcVYu9oRO5mctA4351LcPmK6b/XElF+okCkNmxztd4Jk82VOvAaHbm04CSIB8LAvSAfOuA+ThTFb8XqBmZSV30QxANYs2csV/oQ4cICNOI021UuJvzAMd2keo6q24Ed4phfmM95C/YtgXcbpXm3ezS0d9XW887gQTrWmrlg6o0wJexqv5aECWkQHdiFRfj0nl/srCrpYWYXaDfVZA2yKxInpbj93ATJoyiw1PyvVRECOV8bCTwWdnQCmXtVKRnqgMMUJwyHj8Qizxz9UusNgkFFaboWNp+fRq+yTnyInmuGl85t9bGTloL+YWYafCG/tPN862r1ReUa0hyfMYCm98+odPBfDfXXUDkRIlrUafRI9g/5fqAFSNE6Jne2sDWCq3E3B9XuS/+VSxXN7w1uS8QmG16H6CWIF7PYaqmhuH3MqgyPDJ8S9X5jgF1eq/mtRym+h7WFZdfKxrizjcEgfb813gh5r+bYdQppr6DikMmPf5Nw9P1ZQK/SkiRw6haBX1oyOwjKfVigA/zzaboPoaInhuEx1kAdOKcGhYOyohwdxH5uF2QAWBEtsSzM/BXzQ+JOaEi3Du+mb/sXWGhJ1bwlsi6HyUsbJFtf4EudRT42q+451dWkv9Bz0QBQiXNsydLyeMOUKKxJfijMxvEzQosKnrIj05Z14cjrFFUkgj06mRB7R5LUw6e0vj+BTlemxXkYtm6dFIdE/J4Cc50AXrZC+vvqG0hmdyx7OszmHlrxS7w6Go9T40mylyfoq648/MMdJOKqR7WEOBp4iQ97+12meYstNAiNXgkLy5+AEA6Ve/S/VlqnHZihImGM7nf8dbTevfSpu/kQRRjmIJrBOTSAjYoYtP3DGyjCf07/KrD/zLUXtdSu2aGsH2sEXb/8KJeVvyZTIhEYVIZelXeaOwY0KNgn8DP8qXaM9Ez4DV551754+pCelmJeajRnSfru92Z4nmk8sRwPvyaIZJg4tZ7unTXV5CPaWIBw4LHiopG
+    properties :
+     x : 73
+     y : 137
+     width : 294
+     height : 26
+    type : 2
+    code_elements :
+     type_code : 3
+     p_codes :
+      -
+        type : 276
+        enabled : false
+      -
+        type : 277
+        enabled : false
+      -
+        type : 278
+        enabled : false
+  -
+    name : COMBO_LIST_PRINTER_LIST
+    identifier : 0x26d0090b07929837
+    internal_properties : CAAAAAgAAAAQNMhwSZh2iQBhw/Usq4TTE/W2yIHj87n/Z51K/kKwmt5U2cWyZolIKd6yXFWTcydtwjoCTWMTaLJMYAUIuRj0qTtSeWCzZfQoCJWtE4UGZgsNQ4gWU9xdtmqi7pWirooMfdJ9oy1ZkZIYCvDVpcjdexN9MZCJpyEWubdJARtNgCrR6LAtVGIeW7He8nagucgA65KVdXHvkr/GykJY+ytcJlh62+uJaZLEwvnbdbqIcZ40RobCh0Bf6KB3po/OBQThBo4162H53zj7jA8iHMEpz0vvZJtviCsiyXNkCRfNCrWvdRTooV710rQLjtGK24hYiWVPMJp9X2pfNL3OyaJ8hxjJDitVZd6YQkYUX+IgTMb80o29obpOTHBC6lwvecwrLLiWr6/DwF7y9gGCFD5R9T/XD9gpNgT50zdoovqeB9LaTKKTWTtwiJONbSzdckWKkiIxMJjmTFIouQXt9QnhzYSKMWuslMWlrukCBzbJJgrAhtOgVwrqbMg0dlps+2zlMlznFLbAmHH1rLUM3qBcDCKYRVj6OG1xp5pWITOvkmnajYDbyNoyQ4JvJaX0lpqcIdA7fMfYMgqy8GLTiZBuzCWgrQM3nD8UN37SNKt3tAi8I49YFKR9FOB40GTV/rnMHdWpW6vIcbb5HuiZZaR3/M307X1+z9M2b8rGycMR0vuGIUhfYqGPn+MQ7dGxa/OjxtG57XpykmM+7bxlvWAPT4KI+MqseAgQzNAl/1GNmZjKf8/TEMP3Ejqii8O2ifOrYOdqhnqXMMhxkxai645pvFks9in/Bme/wm2/EM2Sirpu9sswSNdaOZJE9Mgw9W3BHKHyxiQM+IiwQmjqxqm/zl9A3E0kZkAGQAilI2fEkpWIzoxPRmnyFghShjyjneelbYiYCrdeHDT0P+UfaYbAicGTd+Lk3nsxKDvo5j315q9aa/bCk4QaJ59joq16CHHB4/cyiXsjwU0TS+N2tKP449/dlnPw/bLvunlsZhOryASYDSjnmlYeaC8qV+k9lHGMq+0RjlACq1QgJrkmRTQZQSshBn24O/bE0KMKqK8Pi/1YcQlcqUP7ECOuFnm95XBDdlJrPR4leKUwss3Gb2xc0LmTW6j59XjViwOTKrJUIF9nEP2TxoA0+smuq7BnifstbkTmu0nqoFo7sHXwI1bnVz6uiC9UR0Zvp7DCACoVQMv5GZmDm0hihlch14qF6p4BJJFsWJvohqVSnEw5M43EJFzt7IroKyTzAqnEqhOqbstxy0yMxZYCXHPkMriQBJZMixYpFH/E7eN/AzMqHY4LQ4834UzJd/+r1CiaiCySUjp3kvkhhkSQj94mXzuUhN3Ny+kiDpa/NZ0PQk4vXq0udR5QGZ+oVkLtTytwDWqvv74xRsmw4AIR1q/tkxhtZRUCsexujAxjuBygWkHBSEbJ+NVRGL6Y6YAH3GpfDLVho1WU3IvqN0j0RQg1zn3l03jrmvEU9l7eBFgx4avPC/6scHNc3SznjYD/18Tf/Keji0nCFyaAATH7yD9S7ks1dClKDT6ce0sEQqq5/W+aIJ0/1D19mr9BfQ+V4ejTZALrAMOojdosqBz+Vz48LDUmdeZzunzwGoWJ4e/B/Uevv0PAz/NDc+s7n15b5aGre58cT2aVCl0FFCd0RW3OXG7nMXFsB9Q2VdXb2k5dVZO3ZODajwTk7/nAfbPb9ktGIaUwe0Zs5AV1aTDXaDrQ/TdqRKGMhQfw90io1F42l83UgFgOmgXlYjoR7A6xDa9LwPmr6+K3phmKd8d5NbdhhxLAe/zFrCJy1U4fdU0cW7ZLqMhTO5oWBrvLaoa6aH9IcuwX3gvUMJUCqxQX
+    properties :
+     x : 73
+     y : 52
+     width : 294
+     height : 22
+    dropdown :
+     internal_properties : CAAAAAgAAAAEg3fr5mupqkon5wDlCEjPNXgmZpDDhzaTGsxf46b8higxRjM/cvDvI7M+VtmAyUKamcAusGFurTntkwRfXQh4m6n8oX9L1NQh+J1CCRg/hP32SlopocvELB2F1+4xM8HMozx8rce7C0ln+VX/LQwBeEGVS+hbk9dA3Dc4OHJMoAnyDbjvr/VbnFa25Wjd4qwdw6c1b405fvaz2q4h5hpymaJLM5yqNP9tL+bLafMycp0FN38zr36h11OClQORUFnuEmiroU+uH6Jd/95DTfm6Zj+vqPUlNvyGRW0g8jowdfc5jKgZtAAub5abQ6y2fEEMZKsWPjtQZrdWdvlrHKm9FMw4U5Hbd1yT435cW861CWvwkOcD/6nYzzl+Pf4VJbaPFHve3aIG8Bp+quvNOyk3qHxKmEAFD+PmBATPWLgZoxfPyOPigcDigR0J5zm6ej00qTc+eo3bqrFEHnw0U0NazpKWuygWnu0nWZjEr090pEY6Qi203GAGd/REHoJDA5Cpf1MWwwa9V6kAfPwbjMcbAMUeP03OuQ2ZQiS9gCEpoydwCMh8miaP1QQL2mhJs8uZDjvvVGaO8ZklYBKAa3IfPMp9uIoN8HqXaMVrYNGGRrGIKdjhwAJfXVpPjexcsonUOWo2R9izijgYDoXV7JVb3ykWAaUHuxy9Z8au73vb3NAvP2dLOOezDLf5nwxW4TPrvAvwk4qDbZJajEr/57tnG3CYnIFi4fAsHy328eH9k+7jobOVUsGL4Z3pHahI6P4/h3L9MU3Wt01XCs+wK71OT0gbpBS4kBaaWXNKhS4=
+     type : 7
+    type : 14
+    code_elements :
+     type_code : 23
+     p_codes :
+      -
+        type : 35
+        enabled : false
+      -
+        type : 17
+        enabled : false
+  -
+    name : BTN_OK
+    identifier : 0x26d0090b07939837
+    internal_properties : CAAAAAgAAADUa1kZBW7CqKsZgeBeHTJ1V0H70PzwUaQBkiHKC929Lp+mpWDbPkF3X5aroVuzA5ZqXmkUg3slu8hc9gmovAdrF3T5vI1qlwg5AbxoY7vIBb6xxwnSburwXoT1sE4Etl8NFgGNgUlMaQYnDQydb44h8PwwBX/b6HIBEBSEFrJPFW6DGUVA5U8Rygl4VEnbTsflqFBK3nAtwMhHh7kIL3Uo01ZpQe8cwvfNRx/gcEpHeohj/QlxDQOG05ezZhrShD7ztladyuKAL9NzAemcWBRTs3WZw+c+dF5PqjDo1pfnUk+wTDRxQGi0tvjwte51VbCZIyGVQceEJP9r9F4YW2NiCVVi60ftQgNAIKhhyZjBjhTI1RUj7qANfBeN/1hDMAK/euGie/OjeiZ8eUzHwpMpTvWiDNbHbPtKr6bCyMeByLwsQ1sFbN/TTbzSGfgfOiJR5JAJlgVFWyoZ0xm81rswhg806z/HDCrFKOIUix0vC8uziXH1+d1r6jEiyklYcxvGcaCHHq0sGpQqvFdXfQvajnR7rgQOCmrbMGnh3K4Z2z6opy7dq5EIamc0pw9KL2A5kJY5TiwWwxDiT6cQ6/56Uug6HZUT7+EHhDPchk9Fr2GyfFEY4hvRyeS2rRUKcvZCUFZ1VH0G2Aj5o6/yyPkt68ql+9DLync3O+vm5dShpJsV1v9YHGP8udRq25GzZ5q0sQPR2vgeNoPOWh5tMkHKmvYYqvHHZTJ/zOo3lKvg+vsEp7UbTZDtGh1N6Eq3Mr/nv/bycTvvrZSmwcex+8ikbiF5YFK3BJu/iJooiI7//2GYrZqHBSOwSuxjgjXgRvdZYYtbISoGHyI2bjN9AYr0JIp/LzuO5ZyOTALaYEpw0Eehr4JLOYX8GDm4BqHTyM+ZzRswpAu/cDnt/+Nu+VM4OdFhUp60Bmu0DZgssWaSIRIM8kCf67HzHE/4+UOB7sPTyabUCs3M7MXoqE5dfqNZvaWavRyIM4Qh0lFqoieuPwu8Q6Qy32S2LP01
+    properties :
+     x : 202
+     y : 183
+     width : 80
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         // Validates the selection of the selected printer
+         ValidateSelPrnt()
+         // Closes the window and returns the name of the selected printer
+         Close("",gsNameSelectedPrinter)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : IMG_SPECIFICPRINTER
+    identifier : 0x26d0090b07949837
+    internal_properties : CAAAAAgAAAApT5vPVhk0WAVrPusgClvK4WcxSetDZydOcn1LZA7/jyDHmU3fMCfHJ6HGxXlYXWQhCy/DNAoKSPQm+tGxn+GCITa7amw0fYBopsNA2vgvPXNHas07iwatviHiCrRNuv2PVEN1u3AF2PDJAWiWnK7rzyK/dBZZ39FtCEUFDV2LO79LDqirZco82WpYLz3UA1g47WJAvrmqcNcEnt6sBwOauwuWiX02C2n604VMccMAgNomeFj9JefGpoXtVqMmvMH35sJ/EQ12Eh47MP9rPxpu6/rXz/txVADHzyWYP228uYoJPnal0gZwg5496/2vMEmXhshJbFRCr9AYVIctjqnxlArDfO7VagjP2CeNP9DfCN7O2nhVk3LXrk9gct6Ag9k1eDsLakHBGLnTOhOj6y9sWU/ygRfcEhaDRnw+bUKIYIziTFZitFPM1xn9bw8PMGLvDbWf7E2mvtS/fX8lXyYD+oJd67yxBi3EBlg48Ymmdm021Akj7in2e9LhCatN/Q/a2DiIhfzIAbUq/hQ6jJE6Na6UCKo5OcqE9gwjCe2onFlA0KCiydyaguCQSnijl1TY7ILw/xlgRnpNskZbiGmFEx0cd8FHdxVHQ/LI2IqGQqpYa6GXRbY8c582bFJXsEcPQ/sgs3EczJiTvPOvmzJC4r1HGVGCOOD6P3IwFhMJaoiwfqZfl7SE4tqmGkLBNjf2Zg+Dn9OjV2apHbreErq4zZpcfY1YvCWwLZHBxmDzEmlEozrb116aJfic/Hr7lndPKglADydSWNilIr6LwK2wUy5PJhWGmunyOgCvYst1R9IjwPun+qpspuVYIur4jorCArxcsT1TA4m04OCw2N4o5lrapGPwxBk2wJEbZ/3bBYU5qHT41M/lx/rIqjJmqLOX6TT0IqeZ7KnGXtsXPwlnA3iM3HEVeN6YzDPd0ne40VyjlM/8ejzq8Zz33wXPPwQCiVhMAlwG2ksMizeQDKIs3Bg=
+    properties :
+     x : 19
+     y : 52
+     width : 48
+     height : 48
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes :
+      -
+        type : 18
+        enabled : false
+  -
+    name : IMG_DEFAULTPRINTER
+    identifier : 0x26d0090b07959837
+    internal_properties : CAAAAAgAAACN3grz9QX4zIQFdvzGzBLJB8wBYhOaIphmfMuydVfSl7jBOG+9txRlW3u9fm3jKT1+Yi4F3e3XhY0AMkFxP3i7JhVkkbaqzFN6PXhUpnbURCI6A1UWzp0eu+RzAEnJo2SCk3aajBnTMsK8Q5s2GuUbuXN5527g01DXQVMysyD9lMdsMUhZYtlB0KcYyeZIbhWpX4KShPcq+XC0ofv9vtnHzrNpSnd5fa5BVc9USu6OuQ0rMTIGwiSF4m1rHHZccBPMO84IlPKfWYWEG9EkdZw8V4Vv5QcMvpu+9RCFiMzG2rr9yTc0msIEpSP85xWfgS1INwGHkOzuQcHTKXlTlCwp3RclvQuL4QkPGaCzqvzPaGSCiXYnInrCFKw+yUJnpy15AkK9PY7d2Bt7dfxOXZYTnd3v4XAu5peuCJUCgbeBq6IFSweIemBv3fBIe818VYDML5o3YshfDTGAaUiKXKkKo8+oPoyTYVEjEn9tj2UCPbNkM/c3Ob4LnRYZIkC+lh+O2uoKIHwrl4IExb/Ec4jHUkBOv2ETG39HitAWmu3WEJktRHLHmC2po04oZG3Aa+LosQwcas6RR2/2wjmuWOMgcONN7Q859Nq+YQLWhVnmQ+2L/Mmm4U/zCp/fAWA6o9NazdBEsllnyKYXf9GVpqKmPCyPAUzfsKN3YqERVy2h3tWAWPaV6dJA2jHuS1zIvbsqHf2L2d1gYgchxnaPBzIs6e5meOSDLDzp8ZCtcHbs0x6iHqSj17yB4xMQpTimVA3sq9JVaBcE+FGrp0J7E8+Cz8KyCjzXz0OokmlvWXXXs+t9g4UB2l6lwickRXFDOLbr8SPHMWLj3NCshBwT8nttDOHDWXEil6Z0qaMY4WNXmfYDCMB1pGH73x79LtlnwlJ2hYcmOKNvE2yYDKQ9K6AOOEblOs7ucEt9nBmqpcaur69Ia2ZXH68/NA87k0BythML8aPziUhZWV2fAwYlA4Sw3OmD2W1vyaxoVVYdHrk=
+    properties :
+     x : 19
+     y : 136
+     width : 48
+     height : 48
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes :
+      -
+        type : 18
+        enabled : false
+ menu :
+  name : _Menu
+  identifier : 0x249c0ee80436d180
+  internal_properties : CAAAAAgAAACCv199ARoPUfG3WAPSG9eefhOOjWMQrs8CrX6cGGGJPoSHWBq4PXhStOWc1YnAZMZ5+EFR1WTDn8CTOTiyLnXPpAR5X8rsRkPZrm1yZeYDDt4kRzDPLbUf4Sh/mD3kd1D8V2drCFLmjeQhgpw7GKGwHRga+ZdjSqXGIC3LD1RracZ230hOmUJTj+ABDW4IHrw4PflmVGgp8E9KnAf/gselRrzEY90l3Cr9N00QijFYYrbrl4qF4kdim1YX6jYT4ezQhbJsU84ENZsxzq+o0JVHYQ8rxck600VhGV04/ao=
+  options : []
+ languages :
+  - en-GB
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAABcVOS9Yg//yLTDGXO97CJd3Z/Vq8q7bwbO7vB3MFe269wrSzxeayMkOn1UKTKs9Zlei7pgbK4UL1RV5V9kiKZzqOCvBHRpF9tUz5ornjl4PvC4888kU45nUwAiRr7n
+ actionbar : {}
+ code_elements :
+  internal_properties : CAAAAAgAAACXiHbz5sxAgg5oBw263mrRnl5QmeWZ2tcO8dL8nvaYYNJAxuxYRbm37sT8zEv+32HGTo1rg0gLMk+wPSg2esA=
+  type_code : 1
+  p_codes :
+   -
+     code : |1-
+      // Summary: <specify the action of the procedure>
+      // Syntax:
+      // WIN_SelectPrinter ([<gsParamPrinterName> is string])
+      //
+      // Parameters:
+      //	gsParamPrinterName (ANSI string): <specify the role of gsParamPrinterName>
+      // Return value:
+      // 	None
+      //
+      PROCEDURE WIN_PrinterSelection(gsParamPrinterName is string = iInfoPrinter(True, iPrinterName))
+      
+      gsNameSelectedPrinter	is string = ""
+      
+      LOCAL
+      	nSubscript is int
+      	
+      // Updates the edit control that contains the default printer
+      EDT_DEFAULTPRINTER = iInfoPrinter(False, iPrinterName)
+      
+      // Updates the list that contains the list of printers
+      ListAdd(COMBO_LIST_PRINTER_LIST, iListPrinter())
+      
+      // Was a printer specified?
+      IF gsParamPrinterName <> "" THEN
+      	// Printer passed in parameter
+      	nSubscript = ListSeek(COMBO_LIST_PRINTER_LIST, gsParamPrinterName)	
+      ELSE
+      	// Default printer
+      	nSubscript = ListSeek(COMBO_LIST_PRINTER_LIST, EDT_DEFAULTPRINTER)	
+      END
+      
+      // Was a printer found?
+      IF nSubscript > 0 THEN
+      	// Select it
+      	ListSelectPlus(COMBO_LIST_PRINTER_LIST, nSubscript)
+      ELSE
+      	// Not found
+      	IF COMBO_LIST_PRINTER_LIST..Occurrence > 0 THEN
+      		ListSelectPlus(COMBO_LIST_PRINTER_LIST, 1)
+      	ELSE
+      		Error(<§$0000§>)
+      		Close
+      	END
+      END
+   -
+     code : |1-
+      
+     type : 34
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1-
+      // Returns the name of the selected printer
+      RESULT gsNameSelectedPrinter
+     type : 2
+   -
+     code : |1-
+      
+     type : 11
+   -
+     type : 12
+   -
+     type : 17
+   -
+     type : 13
+  procedures :
+   -
+     name : ValidateSelPrnt
+     procedure_id : 1643823806871869495
+     type_code : 14
+     code : |1-
+      // Summary: validates the selected printer (default printer or printer from the list)
+      PROCEDURE ValidateSelPrnt()
+      
+      //Printer from the list?
+      IF RADIO_PRINTER=1 THEN
+      	//Yes
+      	gsNameSelectedPrinter = COMBO_LIST_PRINTER_LIST[COMBO_LIST_PRINTER_LIST]
+      ELSE
+      	//default printer
+      	gsNameSelectedPrinter = EDT_DEFAULTPRINTER
+      END
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : ImprimanteSelection
+resources :
+ string_res :
+  identifier : 0x1284a0fb00fa53e6
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      en-GB : No printer is configured on this computer.
+     index : 0
+   -
+     text :
+      en-GB : Select a printer
+     index : 1
+   -
+     text :
+      en-GB : The printer cannot be defined as default printer.
+     index : 2
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe
